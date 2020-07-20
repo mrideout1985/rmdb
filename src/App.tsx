@@ -1,26 +1,36 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Search from "./components/Search/Search";
+import { Home } from "./components/Pages/Home";
+import { Footer } from "./components/Footer/Footer";
+import { FilmInfo } from "./components/FilmInfo/FilmInfo";
+import { Nav } from "./components/Navbar/Nav";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = () => {
+	const [searchTerm, setSearchTerm] = useState<string>("");
 
-export default App;
+	const handleSearchTerm = (value: string) => {
+		setSearchTerm(value);
+	};
+
+	return (
+		<Router>
+			<>
+				<Nav>
+					<Search setParentValue={handleSearchTerm} />
+				</Nav>
+				<Switch>
+					<Route
+						path="/"
+						exact
+						children={<Home searchTerm={searchTerm} />}
+					/>
+					{/* <Route path="/film-info/:id" component={FilmInfo} /> */}
+				</Switch>
+				<Footer />
+			</>
+		</Router>
+	);
+};
+
+export { App };

@@ -1,0 +1,57 @@
+@import "../../sass/abstracts/variables";
+@import "../../sass//abstracts//mixins";
+
+.container {
+	height: 100%;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+	margin-top: 5rem;
+	margin-bottom: 5rem;
+
+	&__movielist {
+		display: grid;
+		padding: 2rem;
+		grid-gap: 2rem;
+		grid-template-columns: repeat(2, 2fr);
+		grid-auto-rows: auto;
+		border: 2px solid $primary-home;
+
+		img {
+			height: 15rem;
+			width: auto;
+			transition: 0.2s ease-in;
+			box-shadow: 0 0 0 2px $primary-home;
+			@include respond(phone) {
+				height: 10rem;
+				width: auto;
+			}
+
+			&:hover {
+				transform: scale(1.2);
+				box-shadow: 0 0 0 4px $primary-home;
+				cursor: pointer;
+			}
+		}
+	}
+
+	.hidden {
+		display: none;
+	}
+}
+
+.container__movielist::-webkit-scrollbar {
+	width: 0.4rem;
+}
+
+.container__movielist::-webkit-scrollbar-track {
+	box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+.container__movielist::-webkit-scrollbar-thumb {
+	background-color: $primary-header;
+	outline: 1px solid rgb(0, 122, 243);
+	height: 1rem;
+	border-radius: 10px;
+}
