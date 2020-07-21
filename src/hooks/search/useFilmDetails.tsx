@@ -11,7 +11,6 @@ const useFilmDetails = (query: number | undefined) => {
 		)
 			.then((res) => {
 				setMovResults(res.data);
-				console.log("res.data: useFilm.tsx ", res.data);
 			})
 			.catch(() => {
 				console.log("Error");

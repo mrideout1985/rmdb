@@ -9,6 +9,7 @@ interface Props {
 const Search: React.FC<Props> = ({ setParentValue }) => {
 	const [input, setInput] = useState("");
 
+	// eslint-disable-next-line no-empty-pattern
 	const [] = useDebounce(
 		() => {
 			setParentValue(input);

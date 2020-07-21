@@ -11,7 +11,6 @@ const useSearch = (query: string) => {
 		)
 			.then((res) => {
 				setMovResults(res.data);
-				console.log("res.data: useSearch.tsx ", res.data);
 			})
 			.catch(() => {
 				console.log("Error");

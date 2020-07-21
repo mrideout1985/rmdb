@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import { Film } from "../../hooks/search/interface";
 import { Modal } from "../Modal/Modal";
 import { FilmCard } from "./FilmCard";

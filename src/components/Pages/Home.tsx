@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import styles from "./Home.module.scss";
 // import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import { Film } from "../../hooks/search/interface";
