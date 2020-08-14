@@ -1,18 +1,15 @@
 import React from "react";
 import styles from "./FilmCard.module.scss";
-import { Film, FurtherInfo } from "../../hooks/search/interface";
+import { Film } from "../../hooks/search/interface";
 import { useFilmDetails } from "../../hooks/search/useFilmDetails";
 
 interface FilmCardProps {
 	films: Film;
-	moreInfo?: FurtherInfo;
 	onClose: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
 }
 
-const FilmCard: React.FC<FilmCardProps> = ({ films, onClose, moreInfo }) => {
+const FilmCard: React.FC<FilmCardProps> = ({ films, onClose }) => {
 	const extendedInfo = useFilmDetails(films.id);
-
-	console.log(extendedInfo);
 
 	return (
 		<>
@@ -24,7 +21,7 @@ const FilmCard: React.FC<FilmCardProps> = ({ films, onClose, moreInfo }) => {
 						rgba(69, 78, 136, .96),
 						rgba(16, 41, 73, .96)
 					),
-					url(https://image.tmdb.org/t/p/w185${films?.backdrop_path})`,
+					url(https://image.tmdb.org/t/p/original${films?.backdrop_path})`,
 					backgroundSize: "contain",
 					backgroundPosition: "LEFT",
 				}}
@@ -45,6 +42,9 @@ const FilmCard: React.FC<FilmCardProps> = ({ films, onClose, moreInfo }) => {
 					<div className={styles["overview"]}>
 						<h2>{extendedInfo?.tagline}</h2>
 						{films.overview}
+					</div>
+					<div className={styles["moreinfo"]}>
+						Release Date : {extendedInfo?.release_date}
 					</div>
 				</div>
 			</div>

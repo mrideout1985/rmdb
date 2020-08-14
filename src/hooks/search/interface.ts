@@ -8,7 +8,9 @@ export interface Results {
 	poster_path?: string;
 	release_date?: string;
 	title?: string;
+	genres: [{ id: number; name: string }];
 	movie_id?: number;
+	tagline: string;
 }
 
 export interface Film {

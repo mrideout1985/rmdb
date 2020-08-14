@@ -1,9 +1,10 @@
 import React from "react";
 import styles from "./Home.module.scss";
-// import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import { Film } from "../../hooks/search/interface";
 import { useSearch } from "../../hooks/search/useSearch";
 import { FilmImage } from "../FilmInfo/FilmImage";
+import { TrendingMovie } from "../Trending/Trending";
+import { Footer } from "../Footer/Footer";
 
 interface Props {
 	searchTerm: string;
@@ -23,17 +24,13 @@ const Home: React.FC<Props> = ({ searchTerm }) => {
 			}
 
 			return filmResultsArray.map((el: Film, key) => {
+				if (el === undefined) {
+					return "";
+				}
 				return (
-					// <Link
-					// 	onClick={toggleModal}
-					// 	key={key}
-					// 	to={`/film-info/${el.id}
-					// `}
-					// >
 					<>
 						<FilmImage element={el} />
 					</>
-					// </Link>
 				);
 			});
 		}
@@ -41,14 +38,26 @@ const Home: React.FC<Props> = ({ searchTerm }) => {
 
 	return (
 		<div className={styles["container"]}>
-			<div
-				className={
-					filmResults
-						? styles["container__movielist"]
-						: styles["hidden"]
-				}
+			<header>Trending Now</header>
+
+			<div className={styles["container__trending"]}>
+				<TrendingMovie />
+			</div>
+
+			<header
+				className={filmResults ? styles["header"] : styles["hidden"]}
 			>
-				{filmList(filmResults)}
+				Search Results
+			</header>
+
+			<div className={styles["container__results"]}>
+				<div
+					className={
+						filmResults ? styles["movielist"] : styles["hidden"]
+					}
+				>
+					{filmList(filmResults)}
+				</div>
 			</div>
 		</div>
 	);

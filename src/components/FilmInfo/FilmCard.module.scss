@@ -50,7 +50,6 @@
 
 		h2 {
 			font-size: 2rem;
-			margin-top: -5rem;
 			font-weight: 100;
 			font-family: monospace;
 			text-transform: uppercase;
@@ -82,12 +81,13 @@
 .btn-container {
 	display: flex;
 	background-color: $primary-header;
-	border-radius: 10px;
-
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
 	justify-content: center;
 	align-items: center;
 	height: 4rem;
 	width: 100%;
+
 	.btn {
 		padding: 0.5rem;
 		background-color: white;

@@ -19,7 +19,6 @@ const FilmInfo = () => {
 				}}
 			>
 				<div className={styles["header"]}>
-					{console.log(film)}
 					<h1>{film?.title}</h1>
 				</div>
 

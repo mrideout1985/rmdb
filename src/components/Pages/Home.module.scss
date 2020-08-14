@@ -2,50 +2,96 @@
 @import "../../sass//abstracts//mixins";
 
 .container {
-	height: 100%;
-	width: 100%;
 	display: flex;
-	justify-content: center;
+	justify-content: flex-start;
 	align-items: flex-start;
-	margin-top: 5rem;
-	margin-bottom: 5rem;
+	flex-direction: column;
+	width: 100%;
+	height: 100%;
 
-	&__movielist {
-		display: grid;
-		padding: 2rem;
-		grid-gap: 2rem;
-		grid-template-columns: repeat(4, 2fr);
-		grid-auto-rows: auto;
-		border: 2px solid $primary-home;
-
-		@include respond(tab-port) {
-			grid-template-columns: repeat(3, 2fr);
-		}
-
-		@include respond(phone) {
-			grid-template-columns: repeat(1, 2fr);
-		}
-
-		img {
-			height: 15rem;
-			width: auto;
-			transition: 0.2s ease-in;
-			box-shadow: 0 0 0 2px $primary-home;
-			@include respond(phone) {
-				height: 20rem;
-				width: auto;
-			}
-
-			&:hover {
-				transform: scale(1.2);
-				box-shadow: 0 0 0 4px $primary-home;
-				cursor: pointer;
-			}
-		}
+	header {
+		padding: 0px 40px;
+		margin: 2rem 0rem 0rem 0rem;
+		font-family: roboto;
+		font-weight: 900;
+		letter-spacing: 0.11rem;
+		height: 1rem;
+		line-height: 2rem;
+		font-size: 1.4rem;
 	}
 
-	.hidden {
-		display: none;
+	&__trending {
+		box-sizing: border-box;
+		padding: 0px 40px;
+		height: auto;
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin-top: 1rem;
+	}
+
+	&__results {
+		height: auto;
+		padding: 0px 40px;
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: flex-start;
+		margin-top: 2rem;
+		margin-bottom: 5rem;
+		box-sizing: border-box;
+
+		li {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+
+		.movielist {
+			display: grid;
+			width: 100%;
+			padding: 2rem;
+			grid-gap: 2rem;
+			grid-template-columns: repeat(6, 2fr);
+			grid-auto-rows: auto;
+			border: 2px solid $primary-header;
+			border-radius: 10px;
+			justify-items: center;
+
+			@include respond(tab-land) {
+				grid-template-columns: repeat(4, 2fr);
+			}
+
+			@include respond(tab-port) {
+				grid-template-columns: repeat(3, 2fr);
+			}
+
+			@include respond(phone) {
+				grid-template-columns: repeat(1, 2fr);
+			}
+
+			img {
+				height: 15rem;
+				width: auto;
+				transition: 0.2s ease-in;
+				border-radius: 10px;
+
+				@include respond(phone) {
+					height: 20rem;
+					width: auto;
+				}
+
+				&:hover {
+					transform: scale(1.1);
+					cursor: pointer;
+				}
+			}
+		}
+
+		.hidden {
+			display: none;
+		}
 	}
 }
 

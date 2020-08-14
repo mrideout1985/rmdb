@@ -26,7 +26,7 @@ const App = () => {
 					/>
 					{/* <Route path="/film-info/:id" component={FilmInfo} /> */}
 				</Switch>
-				<Footer />
+				{/* <Footer /> */}
 			</>
 		</Router>
 	);
