@@ -4,7 +4,6 @@ import { Film } from "../../hooks/search/interface";
 import { useSearch } from "../../hooks/search/useSearch";
 import { FilmImage } from "../FilmInfo/FilmImage";
 import { TrendingMovie } from "../Trending/Trending";
-import { Footer } from "../Footer/Footer";
 
 interface Props {
 	searchTerm: string;
