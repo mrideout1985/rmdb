@@ -24,7 +24,7 @@ const TrendingMovie: React.FC = () => {
 	};
 	return (
 		<>
-			<div className={styles["trending"]}>{createTrendingList()}</div>;
+			<div className={styles["trending"]}>{createTrendingList()}</div>
 		</>
 	);
 };
