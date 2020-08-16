@@ -14,44 +14,32 @@ const FilmCard: React.FC<FilmCardProps> = ({ films, onClose }) => {
 	return (
 		<>
 			<div
-				className={styles["container"]}
+				className={styles["movie-image"]}
 				style={{
-					backgroundImage: `linear-gradient(
-						180deg,
-						rgba(69, 78, 136, .96),
-						rgba(16, 41, 73, .96)
-					),
+					backgroundImage: `
 					url(https://image.tmdb.org/t/p/original${films?.backdrop_path})`,
-					backgroundSize: "contain",
-					backgroundPosition: "LEFT",
 				}}
-			>
-				<div className={styles["info1"]}>
-					<div className={styles["movie-image"]}>
-						<img
-							src={
-								films?.poster_path !== null
-									? `https://image.tmdb.org/t/p/w185${films?.poster_path}`
-									: `https://place-hold.it/300x500/aaa/WHITE&text=NO-IMAGE-AVAILABLE&fontsize=20`
-							}
-							alt="poster"
-						/>
+			></div>
+
+			<div className={styles["text-movie-cont"]}>
+				<div className={styles["col1"]}>
+					<h1>{extendedInfo?.title}</h1>
+					<ul className={styles["movie-gen"]}>
+						<li>PG-13 /</li>
+						<li>2h 49min /</li>
+						<li>Adventure, Drama, Sci-Fi,</li>
+					</ul>
+				</div>
+				<div className={styles["summary-row"]}>
+					<div className={styles["col2"]}>
+						<h5>SUMMARY</h5>
 					</div>
 				</div>
-				<div className={styles["info2"]}>
-					<div className={styles["overview"]}>
-						<h2>{extendedInfo?.tagline}</h2>
-						{films.overview}
-					</div>
-					<div className={styles["moreinfo"]}>
-						Release Date : {extendedInfo?.release_date}
-					</div>
+				<div className={styles["col1"]}>
+					<p className={styles["movie-description"]}>
+						{extendedInfo?.overview}
+					</p>
 				</div>
-			</div>
-			<div className={styles["btn-container"]}>
-				<button className={styles["btn"]} onClick={onClose}>
-					Close
-				</button>
 			</div>
 		</>
 	);

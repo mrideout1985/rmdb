@@ -62,15 +62,15 @@ const Modal = ({
 							data-testid="modal"
 						>
 							<div className={styles["container__body"]}>
-								<div className={styles["header"]}>
-									{header}
-									<div className={styles["header-info"]}>
-										<p>{filmGenres.join(`-`)}</p>
-									</div>
-								</div>
 								{children}
+								<button
+									className={styles["close-btn"]}
+									onClick={onClose}
+								>
+									<div className={styles["x1"]} />
+									<div className={styles["x2"]} />
+								</button>
 							</div>
-							{/* <button onClick={onClose}>Close</button> */}
 						</div>
 					</FocusLock>
 				)}

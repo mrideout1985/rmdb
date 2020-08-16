@@ -13,17 +13,58 @@
 	justify-content: center;
 
 	&__body {
-		background-color: #f3d7d7;
-		width: 50rem;
-		height: 30rem;
-		display: flex;
-		justify-content: flex-start;
-		align-items: center;
-		flex-direction: column;
-		border-radius: 10px;
+		width: 26rem;
+		height: 45rem;
+		background-color: #1e1b26;
+		margin: 60px auto 0 auto;
+		box-shadow: 5px 5px 115px -14px black;
+		border-radius: 4px;
+		position: relative;
 
 		@include respond(phone) {
-			width: 22rem;
+			width: 18rem;
+			height: 34rem;
+			margin: 0;
+			overflow: scroll;
+		}
+
+		.close-btn {
+			position: absolute;
+			top: 0;
+			right: 0;
+			border: none;
+			background: none;
+			outline: none;
+			z-index: 9999;
+
+			@include respond(phone) {
+				position: fixed;
+				right: 1rem;
+				top: 0.5rem;
+			}
+
+			&:hover {
+				transform: scale(1.1);
+				translate: ease-in 0.25;
+			}
+
+			.x1 {
+				height: 2px;
+				width: 30px;
+				background-color: red;
+				margin-top: 24px;
+				border-radius: 2px;
+				transform: rotate(45deg);
+			}
+
+			.x2 {
+				height: 2px;
+				width: 30px;
+				margin-top: -3px;
+				background-color: red;
+				border-radius: 2px;
+				transform: rotate(-45deg);
+			}
 		}
 	}
 
