@@ -4,6 +4,7 @@ import { Film } from "../../hooks/search/interface";
 import { useSearch } from "../../hooks/search/useSearch";
 import { FilmImage } from "../FilmInfo/FilmImage";
 import { TrendingMovie } from "../Trending/Trending";
+import { TrendingActors } from "../Trending/TrendingActors";
 
 interface Props {
 	searchTerm: string;
@@ -37,10 +38,16 @@ const Home: React.FC<Props> = ({ searchTerm }) => {
 
 	return (
 		<div className={styles["container"]}>
-			<header>Trending Now</header>
+			<header>Trending Movies</header>
 
 			<div className={styles["container__trending"]}>
 				<TrendingMovie />
+			</div>
+
+			<header>Trending People</header>
+
+			<div className={styles["container__trending"]}>
+				<TrendingActors />
 			</div>
 
 			<header

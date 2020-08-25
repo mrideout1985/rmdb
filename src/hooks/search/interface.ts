@@ -20,7 +20,7 @@ export interface Film {
 	tagline: string;
 	total_pages?: number;
 	total_results?: number;
-	id?: number;
+	id?: number | undefined;
 	runtime?: number;
 	vote_average?: number;
 	backdrop_path?: string;
@@ -57,4 +57,53 @@ export interface FurtherInfo {
 	video: boolean;
 	vote_average: number;
 	vote_count: number;
+}
+
+export interface KnownFor {
+	poster_path: string | null;
+	adult: boolean;
+	overview: string;
+	release_date: string;
+	original_title: string;
+	genre_ids: number[];
+	id: number;
+	media_type: string;
+	original_language: string;
+	title: string;
+	backdrop_path: string | null;
+	popularity: number;
+	vote_count: number;
+	video: boolean;
+	vote_average: number;
+}
+
+export interface TrendingPeopleResults {
+	adult: false;
+	gender: number;
+	name: string;
+	id: number;
+	profile_path: string;
+}
+
+export interface TrendingPeople {
+	results: TrendingPeopleResults[];
+}
+
+export interface Person {
+	birthday: string | null;
+	id: number;
+	name: string;
+	also_known_as: string[];
+	biography: string;
+	profile_path: string | null;
+}
+export interface Cast {
+	cast_id: number;
+	character: string;
+	profile_path: string;
+	id: number;
+}
+
+export interface WholeTeam {
+	cast: Cast[];
 }

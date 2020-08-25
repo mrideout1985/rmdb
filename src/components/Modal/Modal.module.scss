@@ -14,17 +14,24 @@
 
 	&__body {
 		width: 26rem;
-		height: 45rem;
+		height: 48rem;
 		background-color: #1e1b26;
-		margin: 60px auto 0 auto;
 		box-shadow: 5px 5px 115px -14px black;
 		border-radius: 4px;
 		position: relative;
 
 		@include respond(phone) {
 			width: 18rem;
-			height: 34rem;
+			height: 47rem;
 			margin: 0;
+			overflow: scroll;
+		}
+
+		@include respond(tab-port) {
+			overflow: scroll;
+		}
+
+		@include respond(tab-land) {
 			overflow: scroll;
 		}
 
@@ -32,6 +39,7 @@
 			position: absolute;
 			top: 0;
 			right: 0;
+			height: 3rem;
 			border: none;
 			background: none;
 			outline: none;

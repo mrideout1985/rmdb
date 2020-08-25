@@ -33,6 +33,31 @@
 	color: white;
 	text-align: justify;
 
+	.cast {
+		display: grid;
+		grid-template-columns: repeat(6, 2fr);
+		grid-auto-rows: auto;
+		gap: 0.2rem;
+		width: 100%;
+
+		@include respond(tab-land) {
+			grid-template-columns: repeat(6, 2fr);
+		}
+
+		@include respond(tab-port) {
+			grid-template-columns: repeat(6, 2fr);
+		}
+
+		@include respond(phone) {
+			grid-template-columns: repeat(4, 1fr);
+		}
+
+		img {
+			margin: 0.2rem;
+			border-radius: 1rem;
+		}
+	}
+
 	.summary-row {
 		margin-top: 3rem;
 	}

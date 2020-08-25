@@ -1,7 +1,10 @@
 import React from "react";
 import styles from "./FilmCard.module.scss";
-import { Film } from "../../hooks/search/interface";
+import { Film, Cast } from "../../hooks/search/interface";
 import { useFilmDetails } from "../../hooks/search/useFilmDetails";
+import { useGetCast } from "../../hooks/search/useGetCast";
+import { PersonImage } from "../Person/PersonImage";
+import { CastImage } from "./CastImage";
 
 interface FilmCardProps {
 	films: Film;
@@ -10,6 +13,20 @@ interface FilmCardProps {
 
 const FilmCard: React.FC<FilmCardProps> = ({ films, onClose }) => {
 	const extendedInfo = useFilmDetails(films.id);
+	const filmCast = useGetCast(films.id);
+
+	let cast: any = [];
+
+	const handleCast = () => {
+		if (filmCast !== null) {
+			for (let i: number = 0; i < 12; i++) {
+				cast.push(filmCast?.cast[i]);
+			}
+		}
+		return cast.map((el: any, key: any) => {
+			return <CastImage element={el} />;
+		});
+	};
 
 	return (
 		<>
@@ -25,13 +42,13 @@ const FilmCard: React.FC<FilmCardProps> = ({ films, onClose }) => {
 				<div className={styles["col1"]}>
 					<h1>{extendedInfo?.title}</h1>
 					<ul className={styles["movie-gen"]}>
-						<li>PG-13 /</li>
+						{/* <li>PG-13 /</li>
 						<li>2h 49min /</li>
-						<li>Adventure, Drama, Sci-Fi,</li>
+						<li>Adventure, Drama, Sci-Fi,</li> */}
 					</ul>
 				</div>
 				<div className={styles["summary-row"]}>
-					<div className={styles["col2"]}>
+					<div className={styles["asdf"]}>
 						<h5>SUMMARY</h5>
 					</div>
 				</div>
@@ -40,6 +57,7 @@ const FilmCard: React.FC<FilmCardProps> = ({ films, onClose }) => {
 						{extendedInfo?.overview}
 					</p>
 				</div>
+				<div className={styles["cast"]}>{handleCast()}</div>
 			</div>
 		</>
 	);

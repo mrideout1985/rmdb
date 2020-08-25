@@ -35,7 +35,7 @@ const Search: React.FC<Props> = ({ setParentValue }) => {
 						<input
 							onChange={handleChange}
 							value={input}
-							placeholder="search"
+							placeholder="search movies here"
 						/>
 					</div>
 				</form>
