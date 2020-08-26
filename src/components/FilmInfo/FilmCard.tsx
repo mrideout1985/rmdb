@@ -1,9 +1,8 @@
 import React from "react";
 import styles from "./FilmCard.module.scss";
-import { Film, Cast } from "../../hooks/search/interface";
+import { Film } from "../../hooks/search/interface";
 import { useFilmDetails } from "../../hooks/search/useFilmDetails";
 import { useGetCast } from "../../hooks/search/useGetCast";
-import { PersonImage } from "../Person/PersonImage";
 import { CastImage } from "./CastImage";
 
 interface FilmCardProps {
