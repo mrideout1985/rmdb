@@ -23,7 +23,7 @@ const FilmCard: React.FC<FilmCardProps> = ({ films, onClose }) => {
 			}
 		}
 		return cast.map((el: any, key: any) => {
-			return <CastImage element={el} />;
+			return <CastImage element={el} key={key} />;
 		});
 	};
 

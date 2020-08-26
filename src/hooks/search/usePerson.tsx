@@ -18,7 +18,7 @@ const usePerson = (id: number) => {
 		const cleanup = () => {};
 
 		return cleanup;
-	}, []);
+	}, [id]);
 
 	return personResults;
 };

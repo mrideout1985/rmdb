@@ -18,7 +18,7 @@ const useGetCast = (id: number | undefined) => {
 		const cleanup = () => {};
 
 		return cleanup;
-	}, []);
+	}, [id]);
 
 	return getCast;
 };

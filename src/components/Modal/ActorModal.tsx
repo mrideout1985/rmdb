@@ -3,7 +3,6 @@ import styles from "./Modal.module.scss";
 import { createPortal } from "react-dom";
 import FocusLock from "react-focus-lock";
 import { TrendingPeopleResults } from "../../hooks/search/interface";
-import { usePeople } from "../../hooks/trending/usePeople";
 
 interface ModalProps {
 	children?: ReactNode;
