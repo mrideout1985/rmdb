@@ -22,6 +22,7 @@ export interface Film {
 	total_results?: number;
 	id?: number | undefined;
 	runtime?: number;
+	media_type: string;
 	vote_average?: number;
 	backdrop_path?: string;
 	original_language?: string;

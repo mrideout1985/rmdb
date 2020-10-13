@@ -1,13 +1,13 @@
 import Axios from "axios";
 import { useEffect, useState } from "react";
-import { TrendingMovies } from "../../components/Trending/interfaces";
+import { TrendingTv } from "../../components/Trending/interfaces";
 
-const useTrending = () => {
-	const [trending, setTrending] = useState<TrendingMovies>();
+const useTrendingTV = () => {
+	const [trending, setTrending] = useState<TrendingTv>();
 
 	useEffect(() => {
 		Axios.get(
-			`https://api.themoviedb.org/3/trending/movie/day?api_key=3ed5616efe7e89437efe89ebc93290a7`
+			`https://api.themoviedb.org/3/trending/tv/day?api_key=3ed5616efe7e89437efe89ebc93290a7`
 		)
 			.then((res) => {
 				setTrending(res.data);
@@ -23,4 +23,4 @@ const useTrending = () => {
 	return trending;
 };
 
-export { useTrending };
+export { useTrendingTV };

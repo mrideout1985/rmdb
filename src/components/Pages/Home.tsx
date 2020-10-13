@@ -5,6 +5,7 @@ import { useSearch } from "../../hooks/search/useSearch";
 import { FilmImage } from "../FilmInfo/FilmImage";
 import { TrendingMovie } from "../Trending/Trending";
 import { TrendingActors } from "../Trending/TrendingActors";
+import { TrendingTv } from "../Trending/TrendingTv";
 
 interface Props {
 	searchTerm: string;
@@ -12,6 +13,7 @@ interface Props {
 
 const Home: React.FC<Props> = ({ searchTerm }) => {
 	const filmResults = useSearch(searchTerm);
+	console.log("filmresultsasdfasdf", filmResults);
 
 	const filmList = (films: Film | undefined) => {
 		let filmResultsArray = [];
@@ -42,6 +44,10 @@ const Home: React.FC<Props> = ({ searchTerm }) => {
 
 			<div className={styles["container__trending"]}>
 				<TrendingMovie />
+			</div>
+
+			<div className={styles["container__trending"]}>
+				<TrendingTv />
 			</div>
 
 			<header>Trending People</header>

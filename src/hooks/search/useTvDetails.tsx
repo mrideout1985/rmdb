@@ -1,13 +1,13 @@
 import Axios from "axios";
 import { useEffect, useState } from "react";
-import { Film } from "./interface";
+import { FurtherInfo } from "./interface";
 
-const useSearch = (query: string) => {
-	const [movResults, setMovResults] = useState<Film>();
+const useTvDetails = (query: number | undefined) => {
+	const [movResults, setMovResults] = useState<FurtherInfo>();
 
 	useEffect(() => {
 		Axios.get(
-			`https://api.themoviedb.org/3/search/multi?api_key=3ed5616efe7e89437efe89ebc93290a7&language=en-US&page=1&include_adult=false&query=${query}`
+			`https://api.themoviedb.org/3/tv/${query}?api_key=3ed5616efe7e89437efe89ebc93290a7`
 		)
 			.then((res) => {
 				setMovResults(res.data);
@@ -23,4 +23,4 @@ const useSearch = (query: string) => {
 	return movResults;
 };
 
-export { useSearch };
+export { useTvDetails };

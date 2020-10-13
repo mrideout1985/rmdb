@@ -2,7 +2,7 @@
 @import "../../sass//abstracts//mixins";
 
 .container {
-	background-color: rgba(0, 0, 0, 0.9);
+	background-color: rgba(0, 0, 0, 0.945);
 	position: fixed;
 	height: 100%;
 	width: 100%;
@@ -14,11 +14,12 @@
 
 	&__body {
 		width: 26rem;
-		height: 48rem;
+		height: 98%;
 		background-color: #1e1b26;
 		box-shadow: 5px 5px 115px -14px black;
 		border-radius: 4px;
 		position: relative;
+		overflow: auto;
 
 		@include respond(phone) {
 			width: 18rem;

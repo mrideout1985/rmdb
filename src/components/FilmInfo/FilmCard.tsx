@@ -23,7 +23,11 @@ const FilmCard: React.FC<FilmCardProps> = ({ films, onClose }) => {
 			}
 		}
 		return cast.map((el: any, key: any) => {
-			return <CastImage element={el} key={key} />;
+			return (
+				<>
+					<CastImage element={el} key={key} />
+				</>
+			);
 		});
 	};
 
@@ -56,7 +60,10 @@ const FilmCard: React.FC<FilmCardProps> = ({ films, onClose }) => {
 						{extendedInfo?.overview}
 					</p>
 				</div>
-				<div className={styles["cast"]}>{handleCast()}</div>
+				<div className={styles["castcontainer"]}>
+					<h5>CAST</h5>
+					<div className={styles["cast"]}>{handleCast()}</div>
+				</div>
 			</div>
 		</>
 	);

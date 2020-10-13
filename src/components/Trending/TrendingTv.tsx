@@ -1,11 +1,13 @@
 import React from "react";
 import styles from "./Trending.module.scss";
 import { Film } from "../../hooks/search/interface";
-import { useTrending } from "../../hooks/trending/useTrending";
 import { FilmImage } from "../FilmInfo/FilmImage";
+import { useTrendingTV } from "../../hooks/trending/useTrendingTv";
 
-const TrendingMovie: React.FC = () => {
-	const trend = useTrending();
+const TrendingTv: React.FC = () => {
+	const trend = useTrendingTV();
+
+	console.log("trending tv", trend);
 
 	const createTrendingList = () => {
 		const trendingList: Film[] = [];
@@ -28,4 +30,4 @@ const TrendingMovie: React.FC = () => {
 		</>
 	);
 };
-export { TrendingMovie };
+export { TrendingTv };

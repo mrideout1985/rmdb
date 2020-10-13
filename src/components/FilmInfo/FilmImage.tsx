@@ -9,7 +9,7 @@ interface Props {
 
 const FilmImage: React.FC<Props> = ({ element }) => {
 	let film = element as Film;
-
+	console.log("film in FilmImage", film);
 	const [isOpen, setIsOpen] = useState(false);
 
 	const closeModal = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
