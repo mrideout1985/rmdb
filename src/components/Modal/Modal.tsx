@@ -10,7 +10,7 @@ interface ModalProps {
 	onClose: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
 	header: string | undefined;
 	isModalOpen: boolean;
-	film: Film;
+	film?: Film;
 	innerRef?: RefObject<HTMLDivElement>;
 }
 
@@ -27,19 +27,19 @@ const Modal = ({
 	const container = useRef<HTMLDivElement>(document.createElement("div"));
 	const currentContainer = container.current;
 
-	const extendedInfo = useFilmDetails(film?.id);
+	// const extendedInfo = useFilmDetails(film?.id);
 
-	let filmGenres: string[] = [];
+	// let filmGenres: string[] = [];
 
-	const listGenres = () => {
-		const genArr = extendedInfo?.genres.forEach((el) => {
-			filmGenres.push(el.name);
-		});
+	// const listGenres = () => {
+	// 	const genArr = extendedInfo?.genres.forEach((el) => {
+	// 		filmGenres.push(el.name);
+	// 	});
 
-		return genArr;
-	};
+	// 	return genArr;
+	// };
 
-	listGenres();
+	// listGenres();
 
 	useEffect(() => {
 		if (isModalOpen) {

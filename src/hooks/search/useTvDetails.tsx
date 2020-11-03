@@ -1,9 +1,9 @@
 import Axios from "axios";
 import { useEffect, useState } from "react";
-import { FurtherInfo } from "./interface";
+import { TV } from "./interface";
 
 const useTvDetails = (query: number | undefined) => {
-	const [movResults, setMovResults] = useState<FurtherInfo>();
+	const [movResults, setMovResults] = useState<TV>();
 
 	useEffect(() => {
 		Axios.get(
