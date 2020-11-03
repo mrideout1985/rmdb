@@ -1,0 +1,27 @@
+.container {
+	height: 100vh;
+	width: 100%;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	flex-direction: column;
+
+	.filmcardcontainer {
+		width: 30rem;
+		min-height: 50rem;
+		margin: 2rem;
+		position: relative;
+
+		&::after {
+			content: "";
+			background-color: black;
+			opacity: 0.9;
+			top: 0;
+			left: 0;
+			bottom: 0;
+			right: 0;
+			position: absolute;
+			z-index: -1;
+		}
+	}
+}

@@ -11,8 +11,6 @@ interface FilmCardProps {
 const PersonCard: React.FC<FilmCardProps> = ({ person, onClose }) => {
 	const personInfo = usePerson(person.id);
 
-	console.log("Person", personInfo);
-
 	return (
 		<div className={styles["container"]}>
 			<div

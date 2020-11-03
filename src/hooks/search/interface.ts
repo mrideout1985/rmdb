@@ -16,13 +16,13 @@ export interface Results {
 export interface Film {
 	page?: number;
 	results?: Results[];
-	genres: [{ id: number; name: string }];
-	tagline: string;
+	genres?: [{ id: number; name: string }];
+	tagline?: string;
 	total_pages?: number;
 	total_results?: number;
 	id?: number | undefined;
 	runtime?: number;
-	media_type: string;
+	media_type?: string;
 	vote_average?: number;
 	backdrop_path?: string;
 	original_language?: string;
@@ -32,33 +32,41 @@ export interface Film {
 	poster_path?: string;
 	release_date?: string;
 	title?: string;
+	name?: string;
 	movie_id?: number;
 }
 
-export interface FurtherInfo {
-	adult: boolean;
-	backdrop_path: string | null;
-	belongs_to_collection: null | {};
-	budget: number;
-	genres: [{ id: number; name: string }];
-	homepage: string | null;
-	id: number;
-	imdb_id: string | null;
-	original_language: string;
-	original_title: string;
-	overview: string | null;
-	popularity: number;
-	poster_path: string | null;
-	release_date: string;
-	revenue: number;
-	runtime: number;
-	status: string;
-	tagline: string | null;
-	title: string;
-	video: boolean;
-	vote_average: number;
-	vote_count: number;
+
+
+export interface TV extends Film {
+	
 }
+
+export interface FilmDetails {
+	adult?: boolean
+	backdrop_path?: string | null
+    belongs_to_collection?: null | {}
+    budget?: number
+    genres?: [{ id: number; name: string }]
+    homepage?: string | null
+    id?: number
+    imdb_id?: string | null 
+    original_language?: string
+    original_title?: string
+    overview?: string | null
+    popularity?: number
+    poster_path?: string | null
+    release_date?: string // format Date
+    revenue?: number
+    runtime?: number
+    status?: string 
+    tagline?: string | null
+    title?: string
+    video?: boolean
+    vote_average?: number
+    vote_count?: number
+}
+
 
 export interface KnownFor {
 	poster_path: string | null;

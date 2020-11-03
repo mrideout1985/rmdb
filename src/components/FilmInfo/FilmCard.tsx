@@ -1,28 +1,25 @@
 import React from "react";
 import styles from "./FilmCard.module.scss";
-import { Film } from "../../hooks/search/interface";
-import { useFilmDetails } from "../../hooks/search/useFilmDetails";
-import { useGetCast } from "../../hooks/search/useGetCast";
+import { FilmDetails, WholeTeam } from "../../hooks/search/interface";
 import { CastImage } from "./CastImage";
+// import { useFilmDetails } from "../../hooks/search/useFilmDetails";
+// import { useGetCast } from "../../hooks/search/useGetCast";
 
 interface FilmCardProps {
-	films: Film;
-	onClose: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
+	films: FilmDetails | undefined;
+	cast: WholeTeam | undefined;
 }
 
-const FilmCard: React.FC<FilmCardProps> = ({ films, onClose }) => {
-	const extendedInfo = useFilmDetails(films.id);
-	const filmCast = useGetCast(films.id);
-
-	let cast: any = [];
+const FilmCard: React.FC<FilmCardProps> = ({ films, cast }) => {
+	let mediaCast: any = [];
 
 	const handleCast = () => {
-		if (filmCast !== null) {
+		if (cast !== null) {
 			for (let i: number = 0; i < 12; i++) {
-				cast.push(filmCast?.cast[i]);
+				mediaCast.push(cast?.cast[i]);
 			}
 		}
-		return cast.map((el: any, key: any) => {
+		return mediaCast.map((el: any, key: any) => {
 			return (
 				<>
 					<CastImage element={el} key={key} />
@@ -43,7 +40,7 @@ const FilmCard: React.FC<FilmCardProps> = ({ films, onClose }) => {
 
 			<div className={styles["text-movie-cont"]}>
 				<div className={styles["col1"]}>
-					<h1>{extendedInfo?.title}</h1>
+					<h1>{films?.title}</h1>
 					<ul className={styles["movie-gen"]}>
 						{/* <li>PG-13 /</li>
 						<li>2h 49min /</li>
@@ -57,7 +54,7 @@ const FilmCard: React.FC<FilmCardProps> = ({ films, onClose }) => {
 				</div>
 				<div className={styles["col1"]}>
 					<p className={styles["movie-description"]}>
-						{extendedInfo?.overview}
+						{films?.overview}
 					</p>
 				</div>
 				<div className={styles["castcontainer"]}>

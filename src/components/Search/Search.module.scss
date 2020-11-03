@@ -1,39 +1,80 @@
-.container {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	height: 3rem;
+.form {
 	width: 100%;
-	margin: 0;
-	padding: 0;
+	font-family: monospace;
 
-	form {
-		width: 100%;
-		height: 100%;
+	.search {
+		display: flex;
+		justify-content: center;
 
 		.input {
-			width: 100%;
-			height: 100%;
+			border-radius: 10px;
+			margin-top: 4rem;
+			outline: transparent;
+			border-radius: 3px;
+			width: 25rem;
 			display: flex;
 			justify-content: center;
 			align-items: center;
+			flex-direction: column;
 
 			input {
-				position: relative;
-				padding: 0.3rem 2rem;
-				width: 60%;
-				color: #525252;
-				text-transform: uppercase;
-				font-family: "Roboto", sans-serif;
-				text-align: center;
-				font-size: 1rem;
-				border: none;
-				border-radius: 5px;
-				transition: width 0.4s ease;
-				outline: none;
+				width: 100%;
+			}
 
-				&:focus {
-					box-shadow: 0 0 0 2px rgba(7, 41, 85, 0.904);
+			// &:focus {
+			// 	// border: 1px solid #fff;
+			// 	// outline: transparent;
+			// }
+
+			ul {
+				list-style: none;
+				justify-content: center;
+				display: flex;
+				flex-direction: column;
+				width: 100%;
+				margin-top: 0.1rem;
+				padding: 0;
+				color: #fff;
+				z-index: 999;
+
+				a {
+					text-decoration: none;
+					color: white;
+					margin: 0;
+					padding: 0;
+				}
+
+				li {
+					display: flex;
+					align-items: center;
+					width: inherit;
+					padding: 0.8rem;
+					background-color: #0b0e0f;
+
+					.filminfo {
+						height: 10px;
+						width: 10px;
+						background-color: salmon;
+					}
+
+					h3 {
+					}
+
+					&:hover {
+						background-color: #262829;
+					}
+
+					&:not(:last-child) {
+						/* selects everything excpet the last chld */
+						border-top: 0.2rem solid #111314;
+						border-right: 0.2rem solid #111314;
+						border-left: 0.2rem solid #111314;
+					}
+
+					img {
+						width: 5rem;
+						height: 100%;
+					}
 				}
 			}
 		}

@@ -18,8 +18,6 @@ const CastImage: React.FC<PersonImageProps> = ({ element }) => {
 		setIsOpen(false);
 	};
 
-	console.log("el in CastImage: ", el);
-
 	return (
 		<div className={styles["container"]}>
 			<img
@@ -32,9 +30,9 @@ const CastImage: React.FC<PersonImageProps> = ({ element }) => {
 				onClick={() => setIsOpen(true)}
 			/>
 
-			<ActorModal isModalOpen={isOpen} onClose={closeModal}>
+			{/* <ActorModal isModalOpen={isOpen} onClose={closeModal}>
 				<PersonCard onClose={closeModal} person={el} />
-			</ActorModal>
+			</ActorModal> */}
 		</div>
 	);
 };

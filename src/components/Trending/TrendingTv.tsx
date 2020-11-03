@@ -7,8 +7,6 @@ import { useTrendingTV } from "../../hooks/trending/useTrendingTv";
 const TrendingTv: React.FC = () => {
 	const trend = useTrendingTV();
 
-	console.log("trending tv", trend);
-
 	const createTrendingList = () => {
 		const trendingList: Film[] = [];
 		if (trend?.results !== undefined) {
