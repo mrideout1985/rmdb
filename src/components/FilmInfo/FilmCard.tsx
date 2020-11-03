@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./FilmCard.module.scss";
 import { FilmDetails, WholeTeam } from "../../hooks/search/interface";
 import { CastImage } from "./CastImage";
+import { Link } from "react-router-dom";
 // import { useFilmDetails } from "../../hooks/search/useFilmDetails";
 // import { useGetCast } from "../../hooks/search/useGetCast";
 
@@ -19,11 +20,14 @@ const FilmCard: React.FC<FilmCardProps> = ({ films, cast }) => {
 				mediaCast.push(cast?.cast[i]);
 			}
 		}
-		return mediaCast.map((el: any, key: any) => {
+		return mediaCast.map((el: string, key: any) => {
 			return (
-				<>
-					<CastImage element={el} key={key} />
-				</>
+
+				
+				
+				<Link to="/person-page/">
+						<CastImage element={el} key={key} />
+				</Link>
 			);
 		});
 	};
@@ -35,12 +39,13 @@ const FilmCard: React.FC<FilmCardProps> = ({ films, cast }) => {
 				style={{
 					backgroundImage: `
 					url(https://image.tmdb.org/t/p/original${films?.backdrop_path})`,
+					borderRadius: "10px"
 				}}
 			></div>
 
 			<div className={styles["text-movie-cont"]}>
 				<div className={styles["col1"]}>
-					<h1>{films?.title}</h1>
+					<h1>{films?.title}{films?.name}</h1>
 					<ul className={styles["movie-gen"]}>
 						{/* <li>PG-13 /</li>
 						<li>2h 49min /</li>

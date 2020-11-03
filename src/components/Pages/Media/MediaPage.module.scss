@@ -11,10 +11,15 @@
 		min-height: 50rem;
 		margin: 2rem;
 		position: relative;
+		border-radius: 10px;
+
+		img {
+		}
 
 		&::after {
 			content: "";
 			background-color: black;
+			border-radius: 10px;
 			opacity: 0.9;
 			top: 0;
 			left: 0;

@@ -61,7 +61,8 @@ export interface FilmDetails {
     runtime?: number
     status?: string 
     tagline?: string | null
-    title?: string
+	title?: string
+	name?: string;
     video?: boolean
     vote_average?: number
     vote_count?: number
