@@ -1,41 +1,22 @@
-import React from 'react'
+import React from "react";
 import { useParams } from "react-router-dom";
-import { WholeTeam } from '../../../hooks/search/interface';
-import { useGetTvCast } from "../../../hooks/search/useGetTvCast";
-import { usePerson } from '../../../hooks/search/usePerson';
-import styles from "./PersonPage.module.scss"
-
+import { usePerson } from "../../../hooks/search/usePerson";
+import { ActorCard } from "../../Actor/ActorCard";
+import styles from "./PersonPage.module.scss";
 
 const PersonPage = () => {
+	const { pid }: any = useParams();
+	const person = usePerson(pid);
 
-    const {pid}: any = useParams() 
-    const person = usePerson(pid)
- 
+	console.log(person);
 
-    return (
-   <div className={styles["container"]}>
-			<div
-				className={styles["movie-image"]}
-				style={{
-					backgroundImage: `
-					url(https://image.tmdb.org/t/p/original${person?.profile_path})`,
-				}}
-			/>
-
-			<div className={styles["actorbio"]}>
-				<div className={styles["name"]}>
-					<h1>{person?.name}</h1>
-				</div>
-				<div className={styles["header"]}>
-					<h5>Bio</h5>
-				</div>
-				<div className={styles["biography"]}>
-					<p>{person?.biography}</p>
-				</div>
+	return (
+		<div className={styles.container}>
+			<div className={styles.filmcardcontainer}>
+				<ActorCard actor={person} />
 			</div>
 		</div>
+	);
+};
 
-    )
-}
-
-export {PersonPage}
+export { PersonPage };

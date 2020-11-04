@@ -2,7 +2,6 @@ import React from "react";
 import styles from "./Trending.module.scss";
 import { TrendingPeopleResults } from "../../hooks/search/interface";
 import { usePeople } from "../../hooks/trending/usePeople";
-import { PersonImage } from "../Person/PersonImage";
 
 const TrendingActors: React.FC = () => {
 	const people = usePeople();
@@ -16,11 +15,7 @@ const TrendingActors: React.FC = () => {
 			}
 		}
 		return trendingPeople.map((el: TrendingPeopleResults, key) => {
-			return (
-				<>
-					<PersonImage element={el} />
-				</>
-			);
+			return <>a</>;
 		});
 	};
 

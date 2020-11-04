@@ -9,16 +9,16 @@
 	.filmcardcontainer {
 		width: 30rem;
 		min-height: 50rem;
+		height: 100%;
 		margin: 2rem;
+		padding: 2rem;
 		position: relative;
 		border-radius: 10px;
-
-		img {
-		}
+		border: 1px solid salmon;
 
 		&::after {
 			content: "";
-			background-color: black;
+			// background-color: black;
 			border-radius: 10px;
 			opacity: 0.9;
 			top: 0;

@@ -1,0 +1,80 @@
+@import "../../sass/abstracts/variables";
+@import "../../sass//abstracts//mixins";
+
+.actor-image {
+	width: 100%;
+	height: 40%;
+	box-sizing: border-box;
+	background-position: left;
+	background-repeat: no-repeat;
+	background-size: cover;
+	z-index: 111 !important;
+	-webkit-mask-image: -webkit-gradient(
+		linear,
+		left top,
+		left bottom,
+		color-stop(0, rgba(0, 0, 0, 1)),
+		color-stop(0.35, rgba(0, 0, 0, 1)),
+		color-stop(0.5, rgba(0, 0, 0, 1)),
+		color-stop(0.65, rgba(0, 0, 0, 1)),
+		color-stop(0.85, rgba(0, 0, 0, 0.4)),
+		color-stop(1, rgba(0, 0, 0, 0))
+	);
+
+	position: relative;
+}
+
+.actor-info {
+	font-family: monospace;
+	color: white;
+	text-align: justify;
+
+	.summary-row {
+		margin-top: 3rem;
+	}
+
+	.actor-bio {
+		text-align: justify;
+		line-height: 1.3;
+		// color: darken($color: white, $amount: 50);
+		color: white;
+	}
+
+	.date-of-birth {
+		margin: 0px;
+		padding: 0px;
+		// li {
+		// 	font-family: monospace;
+		// 	font-size: 0.8rem;
+		// 	color: darken($color: white, $amount: 50);
+		// 	width: auto;
+		// 	display: block;
+		// 	float: left;
+		// 	margin-right: 6px;
+		// 	font-weight: 200;
+		// }
+	}
+}
+
+// .btn-container {
+// 	display: flex;
+// 	background-color: $primary-header;
+// 	border-bottom-left-radius: 10px;
+// 	border-bottom-right-radius: 10px;
+// 	justify-content: center;
+// 	align-items: center;
+// 	height: 4rem;
+// 	width: 100%;
+
+// 	.btn {
+// 		padding: 0.5rem;
+// 		background-color: white;
+// 		border-radius: 5px;
+// 		border: 1px solid $primary-home;
+
+// 		&:focus {
+// 			box-shadow: 0 0 0 2px $primary-home;
+// 			outline: none;
+// 		}
+// 	}
+// }
