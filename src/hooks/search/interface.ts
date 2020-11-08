@@ -65,7 +65,8 @@ export interface FilmDetails {
 	name?: string;
     video?: boolean
     vote_average?: number
-    vote_count?: number
+	vote_count?: number
+	first_air_date?: string;
 }
 
 

@@ -1,0 +1,30 @@
+.tabs {
+	.card-container {
+		display: flex;
+		gap: 0.5rem;
+		overflow-y: hidden;
+		overflow-x: scroll;
+		width: 100%;
+		max-width: 1300px;
+		min-height: 22.18rem;
+	}
+	.hide {
+		display: none;
+	}
+	.btn-container {
+		border-top: 1px solid black;
+		border-left: 1px solid black;
+		border-right: 1px solid black;
+
+		.button {
+			border: none;
+			padding: 0.5rem 1rem;
+			background-color: #fff;
+
+			&:focus {
+				outline: none;
+				border-bottom: 1px solid black;
+			}
+		}
+	}
+}

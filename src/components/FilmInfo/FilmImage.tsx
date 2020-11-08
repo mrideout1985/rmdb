@@ -28,6 +28,7 @@ const FilmImage: React.FC<Props> = ({ element }) => {
 						<h3>{film.title}</h3>
 					)}
 				</div>
+				{console.log(film.poster_path)}
 			</div>
 		</>
 	);

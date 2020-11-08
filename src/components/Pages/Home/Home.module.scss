@@ -1,111 +1,17 @@
-@import "../../../sass/abstracts/variables";
-@import "../../../sass//abstracts//mixins";
-
 .container {
-	display: flex;
-	justify-content: flex-start;
-	align-items: flex-start;
-	flex-direction: column;
 	width: 100%;
-	height: 100%;
+	height: 100vh;
 
-	header {
-		padding: 0px 40px;
-		margin: 2rem 0rem 0rem 0rem;
-		font-family: roboto;
-		font-weight: 900;
-		letter-spacing: 0.11rem;
-		height: 1rem;
-		line-height: 2rem;
-		font-size: 1.4rem;
-	}
-
-	&__trending {
-		box-sizing: border-box;
-		padding: 0px 40px;
-		height: auto;
+	.header {
 		width: 100%;
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		margin-top: 1rem;
 	}
 
-	&__results {
-		height: auto;
-		padding: 0px 40px;
-		width: 100%;
+	&__popular-movies {
+		margin-top: 5rem;
 		display: flex;
 		justify-content: center;
-		align-items: flex-start;
-		margin-top: 2rem;
-		margin-bottom: 5rem;
-		box-sizing: border-box;
-
-		li {
-			display: flex;
-			justify-content: center;
-			align-items: center;
-		}
-
-		.movielist {
-			display: grid;
-			width: 100%;
-			padding: 2rem;
-			grid-gap: 2rem;
-			grid-template-columns: repeat(6, 2fr);
-			grid-auto-rows: auto;
-			border: 2px solid $primary-header;
-			border-radius: 10px;
-			justify-items: center;
-
-			@include respond(tab-land) {
-				grid-template-columns: repeat(4, 2fr);
-			}
-
-			@include respond(tab-port) {
-				grid-template-columns: repeat(3, 2fr);
-			}
-
-			@include respond(phone) {
-				grid-template-columns: repeat(1, 2fr);
-			}
-
-			img {
-				height: 15rem;
-				width: auto;
-				transition: 0.2s ease-in;
-				border-radius: 10px;
-
-				@include respond(phone) {
-					height: 20rem;
-					width: auto;
-				}
-
-				&:hover {
-					transform: scale(1.1);
-					cursor: pointer;
-				}
-			}
-		}
-
-		.hidden {
-			display: none;
-		}
 	}
-}
-
-.container__movielist::-webkit-scrollbar {
-	width: 0.4rem;
-}
-
-.container__movielist::-webkit-scrollbar-track {
-	box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-}
-
-.container__movielist::-webkit-scrollbar-thumb {
-	background-color: $primary-header;
-	outline: 1px solid rgb(0, 122, 243);
-	height: 1rem;
-	border-radius: 10px;
 }

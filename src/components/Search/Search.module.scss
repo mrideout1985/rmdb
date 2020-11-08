@@ -11,31 +11,28 @@
 			margin-top: 4rem;
 			outline: transparent;
 			border-radius: 3px;
-			width: 25rem;
+			width: 80%;
 			display: flex;
-			justify-content: center;
-			align-items: center;
 			flex-direction: column;
+			align-items: center;
+			position: relative;
 
 			input {
 				width: 100%;
+				height: 3rem;
+				font-size: 2rem;
+				border-radius: 10px;
+				box-sizing: border-box;
 			}
-
-			// &:focus {
-			// 	// border: 1px solid #fff;
-			// 	// outline: transparent;
-			// }
 
 			ul {
 				list-style: none;
-				justify-content: center;
-				display: flex;
-				flex-direction: column;
 				width: 100%;
-				margin-top: 0.1rem;
-				padding: 0;
+				padding: 1rem;
 				color: #fff;
 				z-index: 999;
+				top: 1.3rem;
+				position: absolute;
 
 				a {
 					text-decoration: none;
@@ -45,19 +42,12 @@
 				}
 
 				li {
-					display: flex;
-					align-items: center;
-					width: inherit;
-					padding: 0.8rem;
 					background-color: #0b0e0f;
 
 					.filminfo {
 						height: 10px;
 						width: 10px;
 						background-color: salmon;
-					}
-
-					h3 {
 					}
 
 					&:hover {

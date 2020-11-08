@@ -6,11 +6,7 @@ import { useSearch } from "../../hooks/search/useSearch";
 import { FilmImage } from "../FilmInfo/FilmImage";
 import styles from "./Search.module.scss";
 
-interface Props {
-	setParentValue: (e: string) => void;
-}
-
-const Search: React.FC<Props> = ({ setParentValue }) => {
+const Search = () => {
 	const [input, setInput] = useState("");
 	const [isOpen, setIsOpen] = useState(false);
 	const filmResults = useSearch(input);
@@ -76,9 +72,10 @@ const Search: React.FC<Props> = ({ setParentValue }) => {
 							placeholder="Search for Movie or TV here"
 							autoComplete="off"
 							id="search"
-							type="text"
+							type="search"
 							onFocus={() => setIsOpen(true)}
 						/>
+
 						<ul ref={ref}>{isOpen && filmList(filmResults)}</ul>
 					</div>
 				</div>

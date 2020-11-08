@@ -1,4 +1,6 @@
 import React from "react";
+import { Header } from "../../Header/Header";
+import { WhatsPopular } from "../../Trending/Popular/WhatsPopular";
 import styles from "../Home/Home.module.scss";
 // import { TrendingMovie } from "../../Trending/Trending";
 // import { TrendingActors } from "../../Trending/TrendingActors";
@@ -10,34 +12,13 @@ interface Props {
 const Home: React.FC<Props> = ({ searchTerm }) => {
 	return (
 		<div className={styles["container"]}>
-			Home Page
-			{/* <header>Trending Movies</header>
+			<header className={styles["header"]}>
+				<Header />
+			</header>
 
-		
-
-			{/* <div className={styles["container__trending"]}>
-				<TrendingTv />
-			</div> */}
-			{/* 
-			<header>Trending People</header>
-
-			<div className={styles["container__trending"]}>
-				<TrendingActors />
-			</div> */}
-			{/* <header
-				className={filmResults ? styles["header"] : styles["hidden"]}
-			>
-				Search Results
-			</header> */}
-			{/* <div className={styles["container__results"]}>
-				<div
-					className={
-						filmResults ? styles["movielist"] : styles["hidden"]
-					}
-				>
-					{filmList(filmResults)}
-				</div>
-			</div> */}
+			<div className={styles["container__popular-movies"]}>
+				<WhatsPopular />
+			</div>
 		</div>
 	);
 };

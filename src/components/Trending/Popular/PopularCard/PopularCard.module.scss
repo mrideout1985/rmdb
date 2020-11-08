@@ -1,0 +1,33 @@
+.container {
+	width: 10rem;
+	.image {
+		pointer-events: none;
+
+		img {
+			height: 15rem;
+			width: auto;
+			border-radius: 10px;
+		}
+	}
+	.content {
+		font-family: monospace;
+		margin-top: 1rem;
+		width: 100%;
+		display: flex;
+		align-content: flex-start;
+		flex-direction: column;
+
+		h2 {
+			font-size: 1.1rem;
+			font-weight: bold;
+			margin: 0 0 0.1rem 0.2rem;
+			display: block;
+		}
+		p {
+			font-size: 1rem;
+			font-weight: 100;
+			color: rgb(75, 75, 75);
+			margin: 0 0 0.1rem 0.2rem;
+		}
+	}
+}

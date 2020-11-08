@@ -1,31 +1,40 @@
 @import "../../sass/abstracts/variables";
 .nav {
 	width: 100%;
-	height: 10rem;
-	background-image: linear-gradient(
-			180deg,
-			black,
-			grey
-		),
-		url("../../images/film.jfif");
-		border: 1px solid black;
-	background-position: left;
-	background-blend-mode: screen;
-	background-size: cover;
-	background-repeat: no-repeat;
-	justify-content: center;
+	height: 7rem;
+	display: flex;
+	justify-content: space-between;
+	background-color: #18244b;
 	align-items: center;
 
 	.nav-links {
-		background-color: rebeccapurple;
 		margin-bottom: 1rem;
-		display: inline-flex;
-		width: 20rem;
+		width: 100%;
+		height: 100%;
+		display: flex;
+		justify-content: space-evenly;
+		align-items: flex-end;
+		position: relative;
+
+		h2 {
+			margin: 0;
+			font-size: 5rem;
+			position: absolute;
+			top: 0;
+			margin: 0.2rem;
+			color: white;
+			-webkit-text-stroke-width: 2px;
+			-webkit-text-stroke-color: rgb(22, 91, 182);
+			stroke-dasharray: 0;
+		}
 
 		.links {
 			color: white;
 			font-size: 1.5rem;
 			position: relative;
+			text-decoration: none;
+			font-family: monospace;
+			text-transform: uppercase;
 
 			&:hover {
 				.dropdown {
@@ -33,21 +42,33 @@
 					justify-content: center;
 					align-items: left;
 					flex-direction: column;
+					background-color: #18244b;
+					color: white;
 					position: absolute;
-					border: 1px solid green;
-					background-color: pink;
 					width: 10rem;
 					top: 100%;
 					left: 0;
 					border-radius: 10px;
+					z-index: 9999;
+					transition: 0.25s ease-in;
+					opacity: 1;
 
 					a {
 						padding: 1rem 2rem 1rem 1rem;
 						margin: 0.4rem 0 0.4rem 0rem;
 						font-size: 1rem;
+						text-decoration: none;
+						color: white;
+						height: 100%;
 
 						&:hover {
-							background-color: red;
+							background-color: #68cee7a6;
+						}
+
+						&:last-child {
+							margin: 0;
+							border-bottom-left-radius: 10px;
+							border-bottom-right-radius: 10px;
 						}
 					}
 				}
@@ -56,6 +77,7 @@
 
 		.dropdown {
 			display: none;
+			opacity: 0;
 		}
 	}
 }
