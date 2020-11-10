@@ -1,4 +1,7 @@
 .tabs {
+	position: relative;
+	transition: 0.25s ease-in-out;
+
 	.card-container {
 		display: flex;
 		gap: 0.5rem;
@@ -10,20 +13,70 @@
 	}
 	.hide {
 		display: none;
+		opacity: 0;
 	}
 	.btn-container {
-		border-top: 1px solid black;
-		border-left: 1px solid black;
-		border-right: 1px solid black;
+		width: auto;
+		position: absolute;
+		top: -6rem;
+		left: 0.5rem;
 
-		.button {
-			border: none;
-			padding: 0.5rem 1rem;
-			background-color: #fff;
+		.switcher-title {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
 
-			&:focus {
-				outline: none;
-				border-bottom: 1px solid black;
+			h5 {
+				margin-right: 1rem;
+				font-size: 1.5rem;
+			}
+
+			.btns {
+				width: inherit;
+				border: 5px solid black;
+				border-radius: 40px;
+				font-family: monospace;
+
+				.button {
+					align-content: center;
+					align-items: center;
+					justify-content: center;
+					background: none;
+					border: none;
+					font-size: 1.5rem;
+					padding: 7px 20px;
+					z-index: 1;
+					position: relative;
+
+					&:after {
+						content: " ";
+						background: rgb(98, 130, 235);
+						border-radius: 40px;
+						height: 100%;
+						position: absolute;
+						bottom: 0;
+						z-index: -1;
+						transition: 0.25s ease-in;
+					}
+
+					&:after {
+						right: 0;
+						transition: 0.25s ease-in;
+					}
+
+					&:focus::after {
+						left: 0;
+						transition: 0.25s ease-in;
+					}
+					&:not(:last-child) {
+						margin-right: 1rem;
+					}
+
+					&:focus {
+						outline: none;
+						transition: 0.25s ease-in;
+					}
+				}
 			}
 		}
 	}

@@ -11,7 +11,6 @@ interface Props {
 }
 
 const Switcher: React.FC<Props> = ({ label, componentList }) => {
-	const [tabs, setTabs] = useState<NodeListOf<HTMLButtonElement>>();
 	const [selected, setSelected] = useState(0);
 	const tabsRef = useRef(null!);
 
@@ -66,9 +65,11 @@ const Switcher: React.FC<Props> = ({ label, componentList }) => {
 				aria-label={label}
 				className={styles["btn-container"]}
 			>
-				{buttons}
+				<div className={styles["switcher-title"]}>
+					<h5>Popular</h5>
+					<div className={styles["btns"]}>{buttons}</div>
+				</div>
 			</div>
-
 			<>{displayComponents()}</>
 		</div>
 	);

@@ -34,6 +34,8 @@ export interface Film {
 	title?: string;
 	name?: string;
 	movie_id?: number;
+	first_air_date?: string;
+
 }
 
 
