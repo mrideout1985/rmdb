@@ -22,30 +22,30 @@ const FilmCard: React.FC<FilmCardProps> = ({ films, cast }) => {
 		}
 		return mediaCast.map((el: string, key: any) => {
 			return (
-
-				
-				
 				<Link to="/person-page/">
-						<CastImage element={el} key={key} />
+					<CastImage element={el} key={key} />
 				</Link>
 			);
 		});
 	};
 
 	return (
-		<>
+		<div className={styles["container"]}>
 			<div
 				className={styles["movie-image"]}
 				style={{
 					backgroundImage: `
 					url(https://image.tmdb.org/t/p/original${films?.backdrop_path})`,
-					borderRadius: "10px"
+					borderRadius: "10px",
 				}}
 			></div>
 
 			<div className={styles["text-movie-cont"]}>
 				<div className={styles["col1"]}>
-					<h1>{films?.title}{films?.name}</h1>
+					<h1>
+						{films?.title}
+						{films?.name}
+					</h1>
 					<ul className={styles["movie-gen"]}>
 						{/* <li>PG-13 /</li>
 						<li>2h 49min /</li>
@@ -67,7 +67,7 @@ const FilmCard: React.FC<FilmCardProps> = ({ films, cast }) => {
 					<div className={styles["cast"]}>{handleCast()}</div>
 				</div>
 			</div>
-		</>
+		</div>
 	);
 };
 

@@ -1,13 +1,13 @@
 import Axios from "axios";
 import { useEffect, useState } from "react";
-import { Popular } from "../../components/Trending/interfaces";
+import { PopularPerson } from "../search/interface";
 
-const usePopularTv = () => {
-	const [state, setState] = useState<Popular>();
+const usePopularPerson = () => {
+	const [state, setState] = useState<PopularPerson>();
 
 	useEffect(() => {
 		Axios.get(
-			`https://api.themoviedb.org/3/tv/popular?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&page=1`
+			`https://api.themoviedb.org/3/person/popular?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&page=1`
 		)
 			.then((res) => {
 				setState(res.data);
@@ -24,4 +24,4 @@ const usePopularTv = () => {
 	return state;
 };
 
-export { usePopularTv };
+export { usePopularPerson };

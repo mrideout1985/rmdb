@@ -102,6 +102,22 @@ export interface TrendingPeople {
 	results: TrendingPeopleResults[];
 }
 
+export interface PopularPersonResults {
+	profile_path: string;
+	adult?: boolean;
+	id: number;
+	known_for?: KnownFor;
+	name: string;
+	popularity?: number;
+}
+
+export interface PopularPerson {
+	page: number;
+	total_results: number;
+	total_pages: number;
+	results: PopularPersonResults[];
+}
+
 export interface Person {
 	birthday: string | null;
 	id: number;

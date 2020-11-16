@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Film, FilmDetails } from "../../../../hooks/search/interface";
-import { PopularResults } from "../../interfaces";
+import { Film } from "../../../../hooks/search/interface";
 import styles from "./PopularCard.module.scss";
 
 interface Props {
