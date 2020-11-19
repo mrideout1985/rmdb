@@ -3,12 +3,12 @@ a {
 }
 
 .container {
-	width: 10rem;
+	width: 7.8rem;
 	.image {
 		pointer-events: none;
 
 		img {
-			height: 15rem;
+			height: 12rem;
 			width: auto;
 			border-radius: 10px;
 		}
@@ -22,13 +22,13 @@ a {
 		flex-direction: column;
 
 		h2 {
-			font-size: 1.1rem;
+			font-size: 1rem;
 			font-weight: bold;
 			margin: 0 0 0.1rem 0.2rem;
 			display: block;
 		}
 		p {
-			font-size: 1rem;
+			font-size: 0.8rem;
 			font-weight: 100;
 			color: rgb(75, 75, 75);
 			margin: 0 0 0.1rem 0.2rem;

@@ -13,7 +13,7 @@ const PopularPersonCard: React.FC<Props> = ({ element }) => {
 	return (
 		<Link to={`/person-page/${person.id}`}>
 			<div className={styles.container}>
-				<a href="/" className={styles.image}>
+				<div className={styles.image}>
 					<img
 						src={
 							person?.profile_path !== null
@@ -22,7 +22,7 @@ const PopularPersonCard: React.FC<Props> = ({ element }) => {
 						}
 						alt=""
 					/>
-				</a>
+				</div>
 				<div className={styles.content}>
 					<h2>{person.name}</h2>
 				</div>

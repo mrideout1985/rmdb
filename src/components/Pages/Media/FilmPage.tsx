@@ -3,35 +3,36 @@ import styles from "./MediaPage.module.scss";
 import { Link, useParams } from "react-router-dom";
 import { useFilmDetails } from "../../../hooks/search/useFilmDetails";
 import { useGetMovieCast } from "../../../hooks/search/useGetMovieCast";
-import { CastImage } from "../../FilmInfo/CastImage";
+import { CastImage } from "../../Cast/CastImage";
+import { Cast } from "../../../hooks/search/interface";
 
 const FilmPage = () => {
-	let { id }: any = useParams();
-	const film = useFilmDetails(id);
-	const filmCast = useGetMovieCast(id);
+	let { id }: { id: string } = useParams();
+	const film = useFilmDetails(parseInt(id));
+	const filmCast = useGetMovieCast(parseInt(id));
 
 	const handleMovieGenres = () => {
 		return (
 			film?.genres &&
 			film?.genres.map((el: { id: number; name: string }, key) => {
-				return el.name;
+				return <p key={key}>{el.name}</p>;
 			})
 		);
 	};
 
-	let mediaCast: any = [];
-
 	const handleCast = () => {
-		if (filmCast !== null) {
+		let mediaCast: Cast[] = [];
+
+		if (filmCast !== undefined) {
 			for (let i: number = 0; i < 4; i++) {
 				mediaCast.push(filmCast?.cast[i]);
 			}
 		}
-		return mediaCast.map((el: string, key: any) => {
+		return mediaCast.map((el: Cast, key: number) => {
 			return (
-				<Link to="/person-page/">
+				<>
 					<CastImage element={el} key={key} />
-				</Link>
+				</>
 			);
 		});
 	};
@@ -77,7 +78,7 @@ const FilmPage = () => {
 							<p>{film?.overview}</p>
 						</div>
 						<div className={styles["cast"]}>
-							{handleCast()}{" "}
+							{handleCast()}
 							<span>
 								<Link
 									style={{

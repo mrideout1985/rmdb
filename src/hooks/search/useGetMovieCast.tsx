@@ -1,9 +1,9 @@
 import Axios from "axios";
 import { useEffect, useState } from "react";
-import { WholeTeam } from "./interface";
+import { CastData } from "./interface";
 
 const useGetMovieCast = (id: number | undefined) => {
-	const [getCast, setGetCast] = useState<WholeTeam>();
+	const [getCast, setGetCast] = useState<CastData>();
 
 	useEffect(() => {
 		Axios.get(

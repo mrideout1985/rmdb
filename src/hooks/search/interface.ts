@@ -1,4 +1,11 @@
 export interface Results {
+
+	results?: Results[];
+
+}
+
+export interface Film {
+
 	backdrop_path?: string;
 	id?: number;
 	original_language?: string;
@@ -11,20 +18,17 @@ export interface Results {
 	genres: [{ id: number; name: string }];
 	movie_id?: number;
 	tagline: string;
+	media_type: string;
+	name: string;
+
+
 }
 
-export interface Film {
-	page?: number;
-	results?: Results[];
-	genres?: [{ id: number; name: string }];
-	tagline?: string;
-	total_pages?: number;
-	total_results?: number;
-	id?: number | undefined;
-	runtime?: number;
-	media_type?: string;
-	vote_average?: number;
+
+
+export interface TV  {
 	backdrop_path?: string;
+	id?: number;
 	original_language?: string;
 	original_title?: string;
 	overview?: string;
@@ -32,16 +36,12 @@ export interface Film {
 	poster_path?: string;
 	release_date?: string;
 	title?: string;
-	name?: string;
+	genres: [{ id: number; name: string }];
 	movie_id?: number;
-	first_air_date?: string;
-
-}
-
-
-
-export interface TV extends Film {
-	
+	tagline: string;
+	media_type: string;
+	name: string;
+	first_air_date: string;
 }
 
 export interface FilmDetails {
@@ -127,12 +127,13 @@ export interface Person {
 	profile_path: string | null;
 }
 export interface Cast {
-	cast_id: number;
-	character: string;
-	profile_path: string;
-	id: number;
+	cast_id?: number;
+	character?: string;
+	profile_path?: string;
+	id?: number;
+	name: string;
 }
 
-export interface WholeTeam {
-	cast: Cast[];
+export interface CastData {
+	cast: Cast[] 
 }

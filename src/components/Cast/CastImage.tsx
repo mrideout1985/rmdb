@@ -1,8 +1,6 @@
-import { url } from "inspector";
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import { TrendingPeopleResults } from "../../hooks/search/interface";
-import { ActorModal } from "../Modal/ActorModal";
 import styles from "./CastImage.module.scss";
 
 interface PersonImageProps {

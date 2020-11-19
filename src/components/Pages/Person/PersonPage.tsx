@@ -5,8 +5,12 @@ import { ActorCard } from "../../Actor/ActorCard";
 import styles from "./PersonPage.module.scss";
 
 const PersonPage = () => {
-	const { pid }: any = useParams();
-	const person = usePerson(pid);
+	interface Pid {
+		pid: string;
+	}
+
+	const { pid } = useParams<Pid>();
+	const person = usePerson(parseInt(pid));
 
 	return (
 		<div className={styles.container}>

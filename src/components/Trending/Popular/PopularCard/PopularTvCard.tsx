@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Film } from "../../../../hooks/search/interface";
 import { TvDetails } from "./interface";
 import styles from "./PopularCard.module.scss";
 
@@ -14,7 +13,7 @@ const PopularTvCard: React.FC<Props> = ({ element }) => {
 	return (
 		<Link to={`/mediatv-info/${tv.id}`}>
 			<div className={styles.container}>
-				<a href="/" className={styles.image}>
+				<div className={styles.image}>
 					<img
 						src={
 							tv?.poster_path !== null
@@ -23,7 +22,7 @@ const PopularTvCard: React.FC<Props> = ({ element }) => {
 						}
 						alt=""
 					/>
-				</a>
+				</div>
 				<div className={styles.content}>
 					<h2>{tv.name}</h2>
 					<p>{tv.first_air_date}</p>

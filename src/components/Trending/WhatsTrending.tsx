@@ -1,6 +1,6 @@
 import React from "react";
 import { Film } from "../../hooks/search/interface";
-import { usePeople } from "../../hooks/trending/usePeople";
+// import { usePeople } from "../../hooks/trending/usePeople";
 import { useTrending } from "../../hooks/trending/useTrending";
 import { useTrendingTV } from "../../hooks/trending/useTrendingTv";
 import { Switcher } from "../Switcher/Switcher";
@@ -17,11 +17,7 @@ export interface SwitcherList {
 const WhatsTrending = (props: Props) => {
 	const trendingMovies = useTrending();
 	const trendingTv = useTrendingTV();
-	const trendingPeople = usePeople();
-
-	console.log("Movies", trendingMovies);
-	console.log("TV", trendingTv);
-	console.log("People", trendingPeople);
+	// const trendingPeople = usePeople();
 
 	const trendingMovieList = (): JSX.Element[] => {
 		const trendingMovieList: Film[] = [];
@@ -33,7 +29,7 @@ const WhatsTrending = (props: Props) => {
 		return trendingMovieList.map((el: Film, key) => {
 			return (
 				<>
-					<PopularMovieCard element={el} />
+					<PopularMovieCard element={el} key={key} />
 				</>
 			);
 		});
@@ -49,7 +45,7 @@ const WhatsTrending = (props: Props) => {
 		return trendingTvList.map((el: Film, key) => {
 			return (
 				<>
-					<PopularTvCard element={el} />
+					<PopularTvCard element={el} key={key} />
 				</>
 			);
 		});
@@ -62,7 +58,11 @@ const WhatsTrending = (props: Props) => {
 
 	return (
 		<>
-			<Switcher label={"Trending"} componentList={switcherList} />
+			<Switcher
+				label={"Trending"}
+				componentList={switcherList}
+				key={Date.now()}
+			/>
 		</>
 	);
 };

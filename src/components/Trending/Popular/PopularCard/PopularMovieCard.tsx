@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Film } from "../../../../hooks/search/interface";
-import { useGetMovieCast } from "../../../../hooks/search/useGetMovieCast";
 import styles from "./PopularCard.module.scss";
 
 interface Props {
@@ -18,7 +17,7 @@ const PopularMovieCard: React.FC<Props> = ({ element }) => {
 			}/${film.id}`}
 		>
 			<div className={styles.container}>
-				<a href="/" className={styles.image}>
+				<div className={styles.image}>
 					<img
 						src={
 							film?.poster_path !== null
@@ -27,7 +26,7 @@ const PopularMovieCard: React.FC<Props> = ({ element }) => {
 						}
 						alt=""
 					/>
-				</a>
+				</div>
 				<div className={styles.content}>
 					<h2>{film.title}</h2>
 					<p>{film.release_date}</p>

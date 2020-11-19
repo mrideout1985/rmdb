@@ -18,7 +18,6 @@ const App = () => {
 					<Route path="/mediatv-info/:id" component={TvPage} />
 					<Route path="/person-page/:pid" component={PersonPage} />
 				</Switch>
-				{/* <Footer /> */}
 			</>
 		</Router>
 	);

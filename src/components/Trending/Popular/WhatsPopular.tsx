@@ -21,8 +21,6 @@ const WhatsPopular: React.FC<Props> = () => {
 	const popularTv = usePopularTv();
 	const popularPerson = usePopularPerson();
 
-	console.log("popperson", popularPerson);
-
 	const popularMovieList = (): JSX.Element[] => {
 		const popMovieList: PopularResults[] = [];
 		if (popularMovie?.results !== undefined) {
@@ -30,8 +28,8 @@ const WhatsPopular: React.FC<Props> = () => {
 				popMovieList.push(popularMovie.results[i]);
 			}
 		}
-		return popMovieList.map((el: PopularResults) => {
-			return <PopularMovieCard element={el} />;
+		return popMovieList.map((el: PopularResults, key) => {
+			return <PopularMovieCard element={el} key={key} />;
 		});
 	};
 
@@ -42,8 +40,8 @@ const WhatsPopular: React.FC<Props> = () => {
 				popTvList.push(popularTv.results[i]);
 			}
 		}
-		return popTvList.map((el: PopularResults) => {
-			return <PopularTvCard element={el} />;
+		return popTvList.map((el: PopularResults, key) => {
+			return <PopularTvCard element={el} key={key} />;
 		});
 	};
 
@@ -54,8 +52,8 @@ const WhatsPopular: React.FC<Props> = () => {
 				popPersonList.push(popularPerson.results[i]);
 			}
 		}
-		return popPersonList.map((el: PopularPersonResults) => {
-			return <PopularPersonCard element={el} />;
+		return popPersonList.map((el: PopularPersonResults, key) => {
+			return <PopularPersonCard element={el} key={key} />;
 		});
 	};
 
@@ -67,7 +65,11 @@ const WhatsPopular: React.FC<Props> = () => {
 
 	return (
 		<>
-			<Switcher label={"Popular"} componentList={switcherList} />
+			<Switcher
+				label={"Popular"}
+				componentList={switcherList}
+				key={Date.now()}
+			/>
 		</>
 	);
 };

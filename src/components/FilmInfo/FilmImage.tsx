@@ -14,7 +14,7 @@ const FilmImage: React.FC<Props> = ({ element }) => {
 			<div className={styles.container}>
 				<img
 					src={
-						film?.poster_path !== null
+						film?.poster_path !== undefined
 							? `https://image.tmdb.org/t/p/original${film?.poster_path}`
 							: `https://place-hold.it/300x500/aaa/WHITE&text=NO-IMAGE-AVAILABLE&fontsize=20`
 					}
@@ -22,7 +22,7 @@ const FilmImage: React.FC<Props> = ({ element }) => {
 				/>
 
 				<div className={styles.filminfo}>
-					{film.media_type === "tv" ? (
+					{film?.media_type === "tv" ? (
 						<h3>{film.name}</h3>
 					) : (
 						<h3>{film.title}</h3>

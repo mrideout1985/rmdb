@@ -8,6 +8,7 @@ interface SwitcherList {
 interface Props {
 	label: string;
 	componentList: SwitcherList[];
+	key: number;
 }
 
 const Switcher: React.FC<Props> = ({ label, componentList }) => {
@@ -20,15 +21,16 @@ const Switcher: React.FC<Props> = ({ label, componentList }) => {
 		setSelected(parseInt((event.target as HTMLButtonElement).id));
 	};
 
-	const components = () => componentList.map((child) => child.component);
+	const components = () => componentList.map((child, key) => child.component);
 
-	const buttonNames = () => componentList.map((child) => child.title);
+	const buttonNames = () => componentList.map((child, key) => child.title);
 
 	const displayComponents = () => {
 		for (let i: number = 0; i < componentList.length; i++) {
 			return componentList.map((el, key) => {
 				return (
 					<div
+						key={key}
 						className={[
 							key === selected ? "" : styles["hide"],
 							[styles["card-container"]],

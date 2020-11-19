@@ -4,27 +4,12 @@ import { useTrending } from "../../hooks/trending/useTrending";
 import Search from "../Search/Search";
 import styles from "./Header.module.scss";
 
-// export const headerBackgroundImages = (url: string) => {
-//     if (backgrounds?.results !== undefined) {
-//         for (let i: number = 0; i < 20; i++) {
-//             headerBackgrounds.push(trendingMovies?.results[i]);
-//         }
-//     }
-//     return headerBackgrounds.map((el: Film, key) => {
-//         return (
-//             <>
-//                 <PopularMovieCard element={el} />
-//             </>
-//         );
-//     });
-//     }
-// }
-
 const Header = () => {
 	const backgrounds = useTrending();
 	const backgroundList: any = [];
+
 	const headerBackgroundImages = () => {
-		const headerBackgrounds: any = [];
+		const headerBackgrounds: Film[] = [];
 
 		if (backgrounds?.results !== undefined) {
 			for (let i: number = 0; i < 20; i++) {
@@ -44,8 +29,6 @@ const Header = () => {
 
 	headerBackgroundImages();
 
-	console.log("backgroundImage", selectBackgroundImage());
-
 	return (
 		<header
 			className={styles["header"]}
@@ -53,6 +36,7 @@ const Header = () => {
 				backgroundImage: `url(https://image.tmdb.org/t/p/original${selectBackgroundImage()})`,
 			}}
 		>
+			{console.log("backgroundList: ", backgroundList)}
 			<div className={styles["wrapper"]}>
 				<h1>Welcome.</h1>
 				<h2>

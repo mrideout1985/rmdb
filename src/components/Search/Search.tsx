@@ -1,5 +1,5 @@
 import React, { useState, useRef } from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useClickAway } from "react-use";
 import { Film } from "../../hooks/search/interface";
 import { useSearch } from "../../hooks/search/useSearch";
