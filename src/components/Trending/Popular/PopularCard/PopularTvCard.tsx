@@ -1,34 +1,36 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { PopularPersonResults } from "../../../../hooks/search/interface";
+import { Film } from "../../../../hooks/search/interface";
+import { TvDetails } from "./interface";
 import styles from "./PopularCard.module.scss";
 
 interface Props {
 	element?: React.ReactNode;
 }
 
-const PopularPersonCard: React.FC<Props> = ({ element }) => {
-	const person = element as PopularPersonResults;
+const PopularTvCard: React.FC<Props> = ({ element }) => {
+	const tv = element as TvDetails;
 
 	return (
-		<Link to={`/person-page/${person.id}`}>
+		<Link to={`/mediatv-info/${tv.id}`}>
 			<div className={styles.container}>
 				<a href="/" className={styles.image}>
 					<img
 						src={
-							person?.profile_path !== null
-								? `https://image.tmdb.org/t/p/original${person?.profile_path}`
+							tv?.poster_path !== null
+								? `https://image.tmdb.org/t/p/original${tv?.poster_path}`
 								: `https://place-hold.it/300x500/aaa/WHITE&text=NO-IMAGE-AVAILABLE&fontsize=20`
 						}
 						alt=""
 					/>
 				</a>
 				<div className={styles.content}>
-					<h2>{person.name}</h2>
+					<h2>{tv.name}</h2>
+					<p>{tv.first_air_date}</p>
 				</div>
 			</div>
 		</Link>
 	);
 };
 
-export { PopularPersonCard };
+export { PopularTvCard };

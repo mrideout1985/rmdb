@@ -1,13 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Film } from "../../../../hooks/search/interface";
+import { useGetMovieCast } from "../../../../hooks/search/useGetMovieCast";
 import styles from "./PopularCard.module.scss";
 
 interface Props {
 	element?: React.ReactNode;
 }
 
-const PopularCard: React.FC<Props> = ({ element }) => {
+const PopularMovieCard: React.FC<Props> = ({ element }) => {
 	const film = element as Film;
 
 	return (
@@ -28,18 +29,12 @@ const PopularCard: React.FC<Props> = ({ element }) => {
 					/>
 				</a>
 				<div className={styles.content}>
-					<h2>
-						{film.title}
-						{film.name}
-					</h2>
-					<p>
-						{film.release_date}
-						{film.first_air_date}
-					</p>
+					<h2>{film.title}</h2>
+					<p>{film.release_date}</p>
 				</div>
 			</div>
 		</Link>
 	);
 };
 
-export { PopularCard };
+export { PopularMovieCard };

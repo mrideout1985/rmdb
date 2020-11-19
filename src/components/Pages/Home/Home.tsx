@@ -1,6 +1,7 @@
 import React from "react";
 import { Header } from "../../Header/Header";
 import { WhatsPopular } from "../../Trending/Popular/WhatsPopular";
+import { WhatsTrending } from "../../Trending/WhatsTrending";
 import styles from "../Home/Home.module.scss";
 // import { TrendingMovie } from "../../Trending/Trending";
 // import { TrendingActors } from "../../Trending/TrendingActors";
@@ -16,8 +17,12 @@ const Home: React.FC<Props> = ({ searchTerm }) => {
 				<Header />
 			</header>
 
-			<div className={styles["container__popular-movies"]}>
+			<div className={styles["container__popular"]}>
 				<WhatsPopular />
+			</div>
+
+			<div className={styles["container__trending"]}>
+				<WhatsTrending />
 			</div>
 		</div>
 	);

@@ -33,7 +33,7 @@
 
 			.btns {
 				width: inherit;
-				border: 5px solid black;
+				border: 3px solid black;
 				border-radius: 40px;
 				font-family: monospace;
 
@@ -44,29 +44,26 @@
 					background: none;
 					border: none;
 					font-size: 1.5rem;
-					padding: 7px 20px;
+					padding: 3px 20px;
 					z-index: 1;
 					position: relative;
 
 					&:after {
 						content: " ";
-						background: rgb(98, 130, 235);
+						background: rgb(9, 33, 107);
 						border-radius: 40px;
 						height: 100%;
 						position: absolute;
 						bottom: 0;
 						z-index: -1;
-						transition: 0.25s ease-in;
 					}
 
 					&:after {
 						right: 0;
-						transition: 0.25s ease-in;
 					}
 
 					&:focus::after {
 						left: 0;
-						transition: 0.25s ease-in;
 					}
 					&:not(:last-child) {
 						margin-right: 1rem;
@@ -75,6 +72,7 @@
 					&:focus {
 						outline: none;
 						transition: 0.25s ease-in;
+						color: cyan;
 					}
 				}
 			}

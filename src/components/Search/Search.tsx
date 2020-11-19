@@ -69,7 +69,7 @@ const Search = () => {
 						<input
 							onChange={handleChange}
 							value={input}
-							placeholder="Search for Movie or TV here"
+							placeholder="Search for movie or tv show..."
 							autoComplete="off"
 							id="search"
 							type="search"

@@ -1,11 +1,12 @@
 import React from "react";
 import { usePopularFilm } from "../../../hooks/popular/usePopularFilm";
-import { usePopularTv } from "../../../hooks/popular/usePopularTv";
-import { PopularResults } from "../interfaces";
-import { PopularCard } from "./PopularCard/PopularCard";
-import { Switcher } from "../../Switcher/Switcher";
 import { usePopularPerson } from "../../../hooks/popular/usePopularPerson";
+import { usePopularTv } from "../../../hooks/popular/usePopularTv";
 import { PopularPersonResults } from "../../../hooks/search/interface";
+import { Switcher } from "../../Switcher/Switcher";
+import { PopularResults } from "../interfaces";
+import { PopularMovieCard } from "./PopularCard/PopularMovieCard";
+import { PopularTvCard } from "./PopularCard/PopularTvCard";
 import { PopularPersonCard } from "./PopularPersonCard/PopularPersonCard";
 
 interface Props {}
@@ -19,7 +20,6 @@ const WhatsPopular: React.FC<Props> = () => {
 	const popularMovie = usePopularFilm();
 	const popularTv = usePopularTv();
 	const popularPerson = usePopularPerson();
-	const ariaLabel = "What's popular";
 
 	console.log("popperson", popularPerson);
 
@@ -31,7 +31,7 @@ const WhatsPopular: React.FC<Props> = () => {
 			}
 		}
 		return popMovieList.map((el: PopularResults) => {
-			return <PopularCard element={el} />;
+			return <PopularMovieCard element={el} />;
 		});
 	};
 
@@ -43,7 +43,7 @@ const WhatsPopular: React.FC<Props> = () => {
 			}
 		}
 		return popTvList.map((el: PopularResults) => {
-			return <PopularCard element={el} />;
+			return <PopularTvCard element={el} />;
 		});
 	};
 
@@ -67,7 +67,7 @@ const WhatsPopular: React.FC<Props> = () => {
 
 	return (
 		<>
-			<Switcher label={ariaLabel} componentList={switcherList} />
+			<Switcher label={"Popular"} componentList={switcherList} />
 		</>
 	);
 };

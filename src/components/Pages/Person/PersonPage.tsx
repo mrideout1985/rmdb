@@ -8,8 +8,6 @@ const PersonPage = () => {
 	const { pid }: any = useParams();
 	const person = usePerson(pid);
 
-	console.log(person);
-
 	return (
 		<div className={styles.container}>
 			<div className={styles.filmcardcontainer}>

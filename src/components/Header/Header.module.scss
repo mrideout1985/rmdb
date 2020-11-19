@@ -1,10 +1,63 @@
 .header {
-	height: 15rem;
-	width: 80%;
-	display: flex;
-	justify-content: flex-end;
-	align-items: center;
-	background-image: linear-gradient(#2424d683, rgba(255, 255, 255, 0.623));
+	height: 360px;
+	width: 65%;
+	position: relative;
 	background-position: center;
 	background-size: cover;
+	background-blend-mode: difference;
+
+	.wrapper {
+		padding: 2rem;
+		width: 100%;
+		height: 100%;
+		box-sizing: border-box;
+		display: flex;
+		justify-content: flex-end;
+		flex-direction: column;
+
+		h1 {
+			width: 100%;
+			font-size: 3rem;
+			font-family: monospace;
+			color: white;
+			z-index: 99;
+			margin-bottom: 0.2rem;
+			margin-left: 0.3rem;
+		}
+
+		h2 {
+			width: 100%;
+			font-size: 2rem;
+
+			font-family: monospace;
+			font-weight: 100;
+			color: white;
+			z-index: 99;
+			margin-bottom: 0.2rem;
+			margin-left: 0.3rem;
+		}
+
+		input {
+			z-index: 99;
+			margin-bottom: 2rem;
+		}
+	}
+
+	color: rgb(3, 37, 65);
+
+	&:after {
+		content: "";
+		width: 100%;
+		height: 100%;
+		background: radial-gradient(
+			circle,
+			rgb(44, 88, 117) 0%,
+			rgb(8, 55, 70) 52%,
+			rgba(3, 37, 65, 1) 100%
+		);
+		opacity: 0.8;
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
 }

@@ -66,7 +66,7 @@ const Switcher: React.FC<Props> = ({ label, componentList }) => {
 				className={styles["btn-container"]}
 			>
 				<div className={styles["switcher-title"]}>
-					<h5>Popular</h5>
+					<h5>{label}</h5>
 					<div className={styles["btns"]}>{buttons}</div>
 				</div>
 			</div>
