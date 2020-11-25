@@ -1,5 +1,5 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
 import { TV } from "../../../hooks/search/interface";
 // import { useGetTvCast } from "../../../hooks/search/useGetTvCast";
 import { useTvDetails } from "../../../hooks/search/useTvDetails";
@@ -11,6 +11,7 @@ const TvPage: React.FC<TV> = (props: Props) => {
 	let { id }: { id: string } = useParams();
 	const tv = useTvDetails(parseInt(id));
 	// const mediaCast = useGetTvCast(id);
+	let history = useHistory();
 
 	const handleMovieGenres = () => {
 		return (
@@ -35,6 +36,12 @@ const TvPage: React.FC<TV> = (props: Props) => {
 					url(https://image.tmdb.org/t/p/original${tv?.backdrop_path})`,
 					}}
 				>
+					<div
+						className={styles["close"]}
+						onClick={() => {
+							history.goBack();
+						}}
+					/>
 					<img
 						src={
 							tv?.poster_path !== null
