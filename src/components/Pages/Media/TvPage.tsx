@@ -1,5 +1,6 @@
 import React from "react";
 import { useHistory, useParams } from "react-router-dom";
+import StarRatingComponent from "react-star-rating-component";
 import { TV } from "../../../hooks/search/interface";
 // import { useGetTvCast } from "../../../hooks/search/useGetTvCast";
 import { useTvDetails } from "../../../hooks/search/useTvDetails";
@@ -21,6 +22,8 @@ const TvPage: React.FC<TV> = (props: Props) => {
 			})
 		);
 	};
+
+	console.log("tv", tv);
 
 	const handleDate = (date: string | undefined) => {
 		return date?.split("").splice(0, 4);
@@ -59,6 +62,19 @@ const TvPage: React.FC<TV> = (props: Props) => {
 						</h1>
 						<div className={styles["genres"]}>
 							{handleMovieGenres()?.join(" - ")}
+						</div>
+						<div style={{ fontSize: "2rem", marginTop: "1rem" }}>
+							<StarRatingComponent
+								name="rate1"
+								value={tv?.vote_average as number}
+								starCount={10}
+								starColor="gold"
+								emptyStarColor="white"
+							/>
+						</div>
+
+						<div className={styles["tagline"]}>
+							<h5>{tv?.tagline}</h5>
 						</div>
 						<div className={styles["overview"]}>
 							<p>{tv?.overview}</p>

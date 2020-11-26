@@ -1,7 +1,7 @@
 @import "../../sass/abstracts/variables";
 .nav {
 	width: 100%;
-	height: 10rem;
+	height: 3rem;
 	display: flex;
 	justify-content: space-between;
 	background-color: #032541;
@@ -18,11 +18,22 @@
 		position: relative;
 
 		a {
-			height: 100%;
-			img {
-				height: 10rem;
-				margin-top: 0.5rem;
-				display: inline-block;
+			padding: 0;
+			h1 {
+				margin: 0 0 0 1rem;
+				line-height: 1.9rem;
+				font-size: 3rem;
+				font-weight: 900;
+				background: -webkit-linear-gradient(
+					180deg,
+					rgba(58, 179, 180, 1) 0%,
+					rgba(16, 133, 114, 1) 50%,
+					rgba(35, 173, 107, 1) 100%
+				);
+				-webkit-background-clip: text;
+				-webkit-text-fill-color: transparent;
+				font-family: "Source Sans Pro", sans-serif;
+				text-decoration: underline;
 			}
 		}
 
@@ -41,43 +52,41 @@
 		.links {
 			color: white;
 			margin: 0 2rem 0 2rem;
-			font-size: 1.5rem;
+			font-size: 1rem;
 			position: relative;
 			text-decoration: none;
-			font-family: monospace;
-			text-transform: uppercase;
-
+			font-family: "Source Sans Pro";
+			font-weight: 100;
 			&:hover {
 				.dropdown {
 					display: inline-flex;
 					justify-content: center;
 					align-items: left;
 					flex-direction: column;
-					background-color: #18244b;
-					color: white;
+					background-color: #d7d8dd;
 					position: absolute;
 					width: 10rem;
 					top: 100%;
 					left: 0;
+					border: 1px solid black;
 					border-radius: 10px;
 					z-index: 9999;
 					transition: 0.25s ease-in;
 					opacity: 1;
 
 					a {
-						padding: 1rem 2rem 1rem 1rem;
-						margin: 0.4rem 0 0.4rem 0rem;
-						font-size: 1rem;
+						padding: 0.5rem 2rem 0.5rem 0.8rem;
+						font-size: 0.8rem;
 						text-decoration: none;
-						color: white;
+						color: black;
 						height: 100%;
 
 						&:hover {
-							background-color: #68cee7a6;
+							background-color: #a5a5a5a6;
+							border-radius: 10px;
 						}
 
 						&:last-child {
-							margin: 0;
 							border-bottom-left-radius: 10px;
 							border-bottom-right-radius: 10px;
 						}
