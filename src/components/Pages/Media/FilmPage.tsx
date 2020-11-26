@@ -1,4 +1,5 @@
 import React from "react";
+import StarRatingComponent from "react-star-rating-component";
 import styles from "./MediaPage.module.scss";
 import { useParams } from "react-router-dom";
 import { useFilmDetails } from "../../../hooks/search/useFilmDetails";
@@ -81,6 +82,20 @@ const FilmPage = () => {
 								<h5>{film?.runtime} mins</h5>
 							</span>
 						</div>
+						<div style={{ fontSize: "2rem", marginTop: "1rem" }}>
+							<StarRatingComponent
+								name="rate1"
+								value={film?.vote_average as number}
+								starCount={10}
+								starColor="gold"
+								emptyStarColor="white"
+							/>
+						</div>
+
+						<div className={styles["tagline"]}>
+							<h5>{film?.tagline}</h5>
+						</div>
+
 						<div className={styles["overview"]}>
 							<p>{film?.overview}</p>
 						</div>

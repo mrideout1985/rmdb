@@ -12,7 +12,7 @@ const Nav: React.FC<Props> = () => {
 		<div className={styles["nav"]}>
 			<nav className={styles["nav-links"]}>
 				<Link to="/">
-					<img src={rmdb} alt="rmdb" />
+					<h1>RMDB</h1>
 				</Link>
 				<div className={styles["links"]}>
 					Movies

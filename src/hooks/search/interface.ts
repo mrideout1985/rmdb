@@ -42,6 +42,7 @@ export interface TV  {
 	media_type: string;
 	name: string;
 	first_air_date: string;
+	vote_average: number;
 }
 
 export interface FilmDetails {
@@ -66,7 +67,7 @@ export interface FilmDetails {
 	title?: string
 	name?: string;
     video?: boolean
-    vote_average?: number
+    vote_average: number
 	vote_count?: number
 	first_air_date?: string;
 }
