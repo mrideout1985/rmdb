@@ -88,7 +88,7 @@ const FilmPage = () => {
 						<div style={{ fontSize: "2rem", marginTop: "1rem" }}>
 							<StarRatingComponent
 								name="rate1"
-								value={film?.vote_average as number}
+								value={film?.vote_average ?? 0}
 								starCount={10}
 								starColor="gold"
 								emptyStarColor="white"
