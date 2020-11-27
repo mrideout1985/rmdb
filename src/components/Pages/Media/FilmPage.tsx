@@ -19,7 +19,7 @@ const FilmPage = () => {
 	const handleMovieGenres = () => {
 		return (
 			film?.genres &&
-			film?.genres.map((el: { id: number; name: string }) => {
+			film?.genres.map((el: { id: number; name: string }, key) => {
 				return el.name;
 			})
 		);
@@ -32,11 +32,14 @@ const FilmPage = () => {
 				theCrew.push(crew.crew[i]);
 			}
 		}
+		// eslint-disable-next-line array-callback-return
 		return theCrew.map((el: Crew, key: number) => {
 			if (el?.job === "Director") {
 				return (
 					<div className={styles["management"]}>
-						<h4 id="name">{el?.name}</h4>
+						<h4 id="name" key={Date.now()}>
+							{el?.name}
+						</h4>
 						<h4 id="job">{el?.job}</h4>
 					</div>
 				);

@@ -18,6 +18,7 @@ const Search = () => {
 		setIsOpen(false);
 	});
 
+	// eslint-disable-next-line no-empty-pattern
 	const [] = useDebounce(
 		() => {
 			setSearch(input);
@@ -56,7 +57,7 @@ const Search = () => {
 								: "mediafilm-info"
 						}/${el.id}`}
 					>
-						<li>
+						<li key={key}>
 							<FilmImage film={el} />
 						</li>
 					</Link>

@@ -21,9 +21,9 @@ const Switcher: React.FC<Props> = ({ label, componentList }) => {
 		setSelected(parseInt((event.target as HTMLButtonElement).id));
 	};
 
-	const components = () => componentList.map((child, key) => child.component);
+	const components = () => componentList.map((child) => child.component);
 
-	const buttonNames = () => componentList.map((child, key) => child.title);
+	const buttonNames = () => componentList.map((child) => child.title);
 
 	const displayComponents = () => {
 		for (let i: number = 0; i < componentList.length; i++) {
@@ -72,7 +72,7 @@ const Switcher: React.FC<Props> = ({ label, componentList }) => {
 					<div className={styles["btns"]}>{buttons}</div>
 				</div>
 			</div>
-			<>{displayComponents()}</>
+			<div>{displayComponents()}</div>
 		</div>
 	);
 };

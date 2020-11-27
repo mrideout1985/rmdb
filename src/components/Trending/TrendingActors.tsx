@@ -15,7 +15,7 @@ const TrendingActors: React.FC = () => {
 			}
 		}
 		return trendingPeople.map((el: TrendingPeopleResults, key) => {
-			return <>a</>;
+			return <div key={key}>a</div>;
 		});
 	};
 
