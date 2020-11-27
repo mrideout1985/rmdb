@@ -5,7 +5,7 @@ export interface Results {
 }
 
 export interface Film {
-
+	adult: boolean;
 	backdrop_path?: string;
 	id?: number;
 	original_language?: string;
@@ -19,7 +19,7 @@ export interface Film {
 	movie_id?: number;
 	tagline: string;
 	media_type: string;
-	name: string;
+	name?: string;
 
 
 }
@@ -137,4 +137,15 @@ export interface Cast {
 
 export interface CastData {
 	cast: Cast[] 
+}
+
+export interface Crew {
+	job: string;
+	name: string;
+	profile_path: string;
+	id: number;
+}
+
+export interface CrewData {
+	crew: Crew[];
 }

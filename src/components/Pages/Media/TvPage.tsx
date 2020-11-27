@@ -66,7 +66,7 @@ const TvPage: React.FC<TV> = (props: Props) => {
 						<div style={{ fontSize: "2rem", marginTop: "1rem" }}>
 							<StarRatingComponent
 								name="rate1"
-								value={tv?.vote_average as number}
+								value={tv?.vote_average ?? 0}
 								starCount={10}
 								starColor="gold"
 								emptyStarColor="white"

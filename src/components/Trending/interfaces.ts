@@ -48,6 +48,7 @@ export interface PopularResults {
     name: string
 	popularity: number
 	title: string;
+	release_date: string
 }
 
 export interface Popular {

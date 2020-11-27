@@ -1,0 +1,25 @@
+.cast-container {
+	.cast {
+		margin: auto;
+		width: 1300px;
+		z-index: 2;
+		padding: 2.5rem 3rem;
+		box-sizing: border-box;
+		position: relative;
+
+		h1 {
+			display: block;
+			margin-top: 0;
+			font-family: "Source Sans Pro", sans-serif;
+		}
+
+		&-details {
+			display: flex;
+			gap: 0.5rem;
+			overflow-y: hidden;
+			overflow-x: scroll;
+			width: 100%;
+			max-width: 1300px;
+		}
+	}
+}

@@ -29,7 +29,7 @@ const WhatsPopular: React.FC<Props> = () => {
 			}
 		}
 		return popMovieList.map((el: PopularResults, key) => {
-			return <PopularMovieCard element={el} key={key} />;
+			return <PopularMovieCard film={el} key={key} />;
 		});
 	};
 

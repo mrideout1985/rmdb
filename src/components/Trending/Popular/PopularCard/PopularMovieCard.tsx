@@ -1,21 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Film } from "../../../../hooks/search/interface";
+import { PopularResults } from "../../interfaces";
 import styles from "./PopularCard.module.scss";
 
 interface Props {
-	element?: React.ReactNode;
+	film: PopularResults | Film;
 }
 
-const PopularMovieCard: React.FC<Props> = ({ element }) => {
-	const film = element as Film;
-
+const PopularMovieCard: React.FC<Props> = ({ film }) => {
 	return (
-		<Link
-			to={`/${
-				film.media_type === "tv" ? "mediatv-info" : "mediafilm-info"
-			}/${film.id}`}
-		>
+		<Link to={`/mediafilm-info/${film.id}`}>
 			<div className={styles.container}>
 				<div className={styles.image}>
 					<img

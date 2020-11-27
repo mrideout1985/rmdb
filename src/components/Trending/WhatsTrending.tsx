@@ -1,6 +1,5 @@
 import React from "react";
 import { Film } from "../../hooks/search/interface";
-// import { usePeople } from "../../hooks/trending/usePeople";
 import { useTrending } from "../../hooks/trending/useTrending";
 import { useTrendingTV } from "../../hooks/trending/useTrendingTv";
 import { Switcher } from "../Switcher/Switcher";
@@ -26,10 +25,10 @@ const WhatsTrending = (props: Props) => {
 				trendingMovieList.push(trendingMovies?.results[i]);
 			}
 		}
-		return trendingMovieList.map((el: Film, key) => {
+		return trendingMovieList.map((el, key) => {
 			return (
 				<>
-					<PopularMovieCard element={el} key={key} />
+					<PopularMovieCard film={el} key={key} />
 				</>
 			);
 		});
