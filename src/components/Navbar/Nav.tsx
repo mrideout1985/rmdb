@@ -1,7 +1,6 @@
 import React from "react";
 import styles from "./Nav.module.scss";
 import { Link } from "react-router-dom";
-import rmdb from "../../images/rmdb.png";
 
 interface Props {
 	// children: React.ReactNode;
