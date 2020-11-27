@@ -6,28 +6,19 @@ import styles from "./Header.module.scss";
 
 const Header = () => {
 	const backgrounds = useTrending();
-	const backgroundList: any = [];
+	let backgroundList: Film[];
 
-	const headerBackgroundImages = () => {
-		const headerBackgrounds: Film[] = [];
-
-		if (backgrounds?.results !== undefined) {
-			for (let i: number = 0; i < 20; i++) {
-				headerBackgrounds.push(backgrounds.results[i]);
-			}
-		}
-		return headerBackgrounds.map((el: Film, key: number) => {
-			return backgroundList.push(el.backdrop_path);
-		});
-	};
+	if (backgrounds?.results) {
+		backgroundList = backgrounds.results;
+	}
 
 	const selectBackgroundImage = () => {
-		return backgroundList[
-			Math.floor(Math.random() * backgroundList.length)
-		];
+		if (backgroundList) {
+			return backgroundList[
+				Math.floor(Math.random() * backgroundList.length)
+			].backdrop_path;
+		}
 	};
-
-	headerBackgroundImages();
 
 	return (
 		<header
@@ -36,13 +27,9 @@ const Header = () => {
 				backgroundImage: `url(https://image.tmdb.org/t/p/original${selectBackgroundImage()})`,
 			}}
 		>
-			{console.log("backgroundList: ", backgroundList)}
 			<div className={styles["wrapper"]}>
 				<h1>Welcome.</h1>
-				<h2>
-					Millions of movies, TV shows and people to discover. Explore
-					Now
-				</h2>
+				<h2>Discover millions of movies, TV shows and people.</h2>
 				<Search />
 			</div>
 		</header>
