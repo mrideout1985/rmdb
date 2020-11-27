@@ -4,15 +4,16 @@ import styles from "./MediaPage.module.scss";
 import { useParams } from "react-router-dom";
 import { useFilmDetails } from "../../../hooks/search/useFilmDetails";
 import { useHistory } from "react-router-dom";
-
-// import { useGetMovieCast } from "../../../hooks/search/useGetMovieCast";
-// import { CastImage } from "../../Cast/CastImage";
-// import { Cast } from "../../../hooks/search/interface";
+import { useGetMovieCast } from "../../../hooks/search/useGetMovieCast";
+import { Crew } from "../../../hooks/search/interface";
+import { useGetMovieCrew } from "../../../hooks/search/useGetMovieCrew";
+import Cast from "../../Cast/CastSmall/Cast";
 
 const FilmPage = () => {
 	let { id }: { id: string } = useParams();
 	const film = useFilmDetails(parseInt(id));
-	// const filmCast = useGetMovieCast(parseInt(id));
+	const cast = useGetMovieCast(parseInt(id));
+	const crew = useGetMovieCrew(parseInt(id));
 	let history = useHistory();
 
 	const handleMovieGenres = () => {
@@ -24,22 +25,24 @@ const FilmPage = () => {
 		);
 	};
 
-	// const handleCast = () => {
-	// 	let mediaCast: Cast[] = [];
-
-	// 	if (filmCast !== undefined) {
-	// 		for (let i: number = 0; i < 4; i++) {
-	// 			mediaCast.push(filmCast?.cast[i]);
-	// 		}
-	// 	}
-	// 	return mediaCast.map((el: Cast, key: number) => {
-	// 		return (
-	// 			<>
-	// 				<CastImage element={el} key={key} />
-	// 			</>
-	// 		);
-	// 	});
-	// };
+	const handleCrew = () => {
+		let theCrew: Crew[] = [];
+		if (crew !== undefined) {
+			for (let i: number = 0; i < 20; i++) {
+				theCrew.push(crew.crew[i]);
+			}
+		}
+		return theCrew.map((el: Crew, key: number) => {
+			if (el?.job === "Director") {
+				return (
+					<div className={styles["management"]}>
+						<h4 id="name">{el?.name}</h4>
+						<h4 id="job">{el?.job}</h4>
+					</div>
+				);
+			}
+		});
+	};
 
 	const handleDate = (date: string | undefined) => {
 		return date?.split("").splice(0, 4);
@@ -98,26 +101,13 @@ const FilmPage = () => {
 
 						<div className={styles["overview"]}>
 							<p>{film?.overview}</p>
+							{handleCrew()}
 						</div>
-						{/* <div className={styles["cast"]}>
-							{handleCast()}
-							<span>
-								<Link
-									style={{
-										color: "white",
-										fontFamily: "monospace",
-										fontSize: "1.5rem",
-									}}
-									to="/full-cast/"
-								>
-									...See More
-								</Link>
-							</span>
-						</div> */}
 					</div>
 				</div>
 			</div>
 			<hr />
+			<Cast cast={cast?.cast} />
 		</div>
 	);
 };
