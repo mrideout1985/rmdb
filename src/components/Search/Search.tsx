@@ -1,4 +1,5 @@
 import React, { useState, useRef } from "react";
+import { useDebounce } from "react-use";
 import { Link } from "react-router-dom";
 import { useClickAway } from "react-use";
 import { Film } from "../../hooks/search/interface";
@@ -8,23 +9,26 @@ import styles from "./Search.module.scss";
 
 const Search = () => {
 	const [input, setInput] = useState("");
+	const [search, setSearch] = useState("");
 	const [isOpen, setIsOpen] = useState(false);
-	const filmResults = useSearch(input);
+	const filmResults = useSearch(search);
 	const ref = useRef(null);
-
-	// eslint-disable-next-line no-empty-pattern
 
 	useClickAway(ref, () => {
 		setIsOpen(false);
 	});
 
+	const [] = useDebounce(
+		() => {
+			setSearch(input);
+		},
+		100,
+		[input]
+	);
+
 	const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 		e.preventDefault();
 		setInput(e.target.value);
-	};
-
-	const handleSubmit = (e: React.ChangeEvent<HTMLFormElement>) => {
-		e.preventDefault();
 	};
 
 	const filmList = (films: Film | undefined) => {
@@ -53,7 +57,7 @@ const Search = () => {
 						}/${el.id}`}
 					>
 						<li>
-							<FilmImage element={el} />
+							<FilmImage film={el} />
 						</li>
 					</Link>
 				);
@@ -63,7 +67,7 @@ const Search = () => {
 
 	return (
 		<>
-			<form className={styles.form} onSubmit={handleSubmit}>
+			<form className={styles.form}>
 				<div className={styles.search}>
 					<div className={styles["input"]}>
 						<input
