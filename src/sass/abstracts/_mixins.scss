@@ -11,7 +11,7 @@
 
 @mixin respond($breakpoint) {
 	@if $breakpoint == phone {
-		@media (max-width: 635px) {
+		@media (max-width: 700px) {
 			@content;
 		}
 	}
@@ -21,7 +21,7 @@
 		}
 	}
 	@if $breakpoint == tab-land {
-		@media (max-width: 1200px) {
+		@media (max-width: 1400px) {
 			@content;
 		}
 	}

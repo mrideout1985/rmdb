@@ -24,7 +24,7 @@ const WhatsPopular: React.FC<Props> = () => {
 	const popularMovieList = (): JSX.Element[] => {
 		const popMovieList: PopularResults[] = [];
 		if (popularMovie?.results !== undefined) {
-			for (let i: number = 0; i < 20; i++) {
+			for (let i: number = 0; i < 10; i++) {
 				popMovieList.push(popularMovie.results[i]);
 			}
 		}
@@ -36,7 +36,7 @@ const WhatsPopular: React.FC<Props> = () => {
 	const popularTvList = (): JSX.Element[] => {
 		const popTvList: PopularResults[] = [];
 		if (popularTv?.results !== undefined) {
-			for (let i: number = 0; i < 20; i++) {
+			for (let i: number = 0; i < 10; i++) {
 				popTvList.push(popularTv.results[i]);
 			}
 		}
@@ -48,7 +48,7 @@ const WhatsPopular: React.FC<Props> = () => {
 	const popularPeople = (): JSX.Element[] => {
 		const popPersonList: PopularPersonResults[] = [];
 		if (popularPerson?.results !== undefined) {
-			for (let i: number = 0; i < 20; i++) {
+			for (let i: number = 0; i < 10; i++) {
 				popPersonList.push(popularPerson.results[i]);
 			}
 		}

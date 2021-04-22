@@ -21,7 +21,7 @@ const WhatsTrending = (props: Props) => {
 	const trendingMovieList = (): JSX.Element[] => {
 		const trendingMovieList: Film[] = [];
 		if (trendingMovies?.results !== undefined) {
-			for (let i: number = 0; i < 20; i++) {
+			for (let i: number = 0; i < 10; i++) {
 				trendingMovieList.push(trendingMovies?.results[i]);
 			}
 		}
@@ -37,7 +37,7 @@ const WhatsTrending = (props: Props) => {
 	const trendingTvList = (): JSX.Element[] => {
 		const trendingTvList: Film[] = [];
 		if (trendingTv?.results !== undefined) {
-			for (let i: number = 0; i < 20; i++) {
+			for (let i: number = 0; i < 10; i++) {
 				trendingTvList.push(trendingTv?.results[i]);
 			}
 		}

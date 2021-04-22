@@ -37,7 +37,7 @@ const Search = () => {
 		if (films !== undefined) {
 			if (Object.keys(films).length > 0) {
 				for (let i: number = 0; i < 5; i++) {
-					let entry = Object.values(films)[3];
+					let entry = Object.values(films)[1];
 					filmResultsArray.push(entry[i]);
 				}
 			}
