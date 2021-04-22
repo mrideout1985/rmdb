@@ -8,7 +8,6 @@ interface SwitcherList {
 interface Props {
 	label: string;
 	componentList: SwitcherList[];
-	key: number;
 }
 
 const Switcher: React.FC<Props> = ({ label, componentList }) => {
@@ -27,16 +26,16 @@ const Switcher: React.FC<Props> = ({ label, componentList }) => {
 
 	const displayComponents = () => {
 		for (let i: number = 0; i < componentList.length; i++) {
-			return componentList.map((el, key) => {
+			return componentList.map((el, i) => {
 				return (
 					<div
-						key={key}
+						key={i}
 						className={[
-							key === selected ? "" : styles["hide"],
+							i === selected ? "" : styles["hide"],
 							[styles["card-container"]],
 						].join(" ")}
 					>
-						{components()[key]}
+						{components()[i]}
 					</div>
 				);
 			});

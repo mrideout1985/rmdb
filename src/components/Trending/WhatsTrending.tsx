@@ -26,11 +26,7 @@ const WhatsTrending = (props: Props) => {
 			}
 		}
 		return trendingMovieList.map((el, key) => {
-			return (
-				<>
-					<PopularMovieCard film={el} key={key} />
-				</>
-			);
+			return <PopularMovieCard film={el} key={key} />;
 		});
 	};
 
@@ -42,11 +38,7 @@ const WhatsTrending = (props: Props) => {
 			}
 		}
 		return trendingTvList.map((el: Film, key) => {
-			return (
-				<>
-					<PopularTvCard element={el} key={key} />
-				</>
-			);
+			return <PopularTvCard element={el} key={key} />;
 		});
 	};
 
@@ -55,15 +47,7 @@ const WhatsTrending = (props: Props) => {
 		{ title: "TV Shows", component: trendingTvList() },
 	];
 
-	return (
-		<>
-			<Switcher
-				label={"Trending"}
-				componentList={switcherList}
-				key={Date.now()}
-			/>
-		</>
-	);
+	return <Switcher label={"Trending"} componentList={switcherList} />;
 };
 
 export { WhatsTrending };

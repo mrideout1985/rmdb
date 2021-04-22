@@ -63,15 +63,7 @@ const WhatsPopular: React.FC<Props> = () => {
 		{ title: "People", component: popularPeople() },
 	];
 
-	return (
-		<>
-			<Switcher
-				label={"Popular"}
-				componentList={switcherList}
-				key={Date.now()}
-			/>
-		</>
-	);
+	return <Switcher label={"Popular"} componentList={switcherList} />;
 };
 
 export { WhatsPopular };

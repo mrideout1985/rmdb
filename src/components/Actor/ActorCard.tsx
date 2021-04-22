@@ -6,8 +6,6 @@ interface Props {
 	actor: Person | undefined;
 }
 
-const test = "test"
-
 const ActorCard: React.FC<Props> = ({ actor }) => {
 	return (
 		<>
